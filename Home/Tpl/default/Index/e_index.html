@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title><{$Think.config.seo_etitle}></title>
+<meta name="keywords" content="<{$Think.config.seo_ekeywords}>" />
+<meta name="description" content="<{$Think.config.seo_edescription}>" />
+<include file='Public:file'/>
+<script language="javascript">var catid="",pid="",bid="";</script>
+<load href="../Public/js/left_active.js"/>
+
+</head>
+<style type="text/css">
+.apple a{display:block; text-decoration:none;}
+
+.apple,.aa{ width:70%; height:30px; overflow:hidden; margin:0px auto; }
+.apple a,.aa a{ width:100%; height:30px; line-height:30px; text-indent:20px; color:#000;}
+.aa {word-wrap:break-word;line-height:30px;  color:#000;}
+</style>
+<body>
+<include file='Public:e_head'/>
+
+<div class="flash">
+ <{:W('Flash',array('table'=>'Flash','lang'=>'e'))}>
+</div>
+
+<div id="main">
+  <!-- 轮播新闻 -->
+  <div class="container newswidth newswidthtop">
+    <div class="content_middle_bottom">
+      <div class="col-md-12 newsgundong">
+        <ul class="spinner">
+          <strong class="news-center">NEWS</strong>
+          <div class="apple">
+            <{:W('List',array('table'=>'New','bid'=>2,'id'=>2,'lang'=>'e'))}> 
+          </div>
+        </ul>
+         </div>
+      </div>
+    </div>
+  <!-- 六个新闻小类 -->
+  <div class="container sixnews newswidth">
+    <{:W('List',array('table'=>'News','bid'=>2,'id'=>2,'lang'=>'e'))}>
+  </div>
+  <!-- 新闻中心和关于我们 -->
+  <div id="center">
+    <div class="index_product" style="display:none">
+        <div class="product_title"><span class="span_title">Products</span><span class="more"><a href="<{:W('Listhref',array('id'=>1,'lang'=>'e'))}>"><img src="../Public/images/more.png" alt="more products"></a></span></div>
+      <{:W('List',array('table'=>'Product','bid'=>1,'id'=>1,'lang'=>'e'))}>
+    </div>
+  </div>
+    <!-- end of center -->
+</div>
+
+<include file='Public:e_foot'/>
+
+<load href="__PUBLIC__/js/picAutoZoom.js"/>
+<script type="text/javascript" language="javascript">
+    $.ajaxSetup({
+        timeout: 300000
+    });
+    function autoScroll(obj){
+            $(obj).find("ul").animate({
+                marginTop : "-39px"
+            },500,function(){
+                $(this).css({marginTop : "0px"}).find("li:first").appendTo(this);
+            })
+        }
+        $(function(){
+            setInterval('autoScroll(".apple")',2000);
+
+        })
+    function delHtmlTag(str){
+     return str.replace(/<[^>]+>/g,"");//去掉所有的html标记
+    }
+</script>
+</body>
+</html>

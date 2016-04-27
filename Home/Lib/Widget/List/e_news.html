@@ -1,0 +1,21 @@
+<if condition="$new">
+  <ul>
+    <volist name="new" id="vo" offset="0" length="6">
+		<div class="a-top col-md-12 col-md-6 col-lg-6">
+			<div class="newleft">
+		       <div class="left-grid">
+			       	<h6><{$vo.ename}>News categories</h6>
+			        <img src="__ROOT__/Uploads/<{$vo.photo}>" class="img-responsive">
+		       </div>
+		       <div class="right-grid">
+			        <h4>
+				        <a href="<{:W('Href',array('url'=>$vo['url'],'id'=>$vo['id'],'type'=>'new','lang'=>'e'))}>">
+				        <{$vo.etitle|mb_substr=###,0,16,'utf-8'}></a>
+				    </h4>
+			        <p><{$vo.econtents|mb_substr=###,0,160,'utf-8'}></p>
+		       </div>
+		    </div>
+	    </div>
+    </volist>
+  </ul>
+</if>

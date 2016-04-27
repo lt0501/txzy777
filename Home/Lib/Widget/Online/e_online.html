@@ -1,0 +1,114 @@
+<!--Customer service-->
+<if condition="$Think.config.is_online neq 0">
+
+    <load href="__PUBLIC__/css/eonline.css"/>
+    <div id="cmsFloatPanel">
+         <div class="ctrolPanel">
+               <a class="arrow" href="#"><span>Top</span></a>
+               <a class="service" href="#"><span>Customer Service</span></a>
+               <a class="message" href="#"><span>Contact</span></a>
+               <a class="qrcode" href="#"><span>Scanning</span></a>
+               <a class="arrow" href="#"><span>footer</span></a>
+         </div>
+         <div class="servicePanel">
+              <div class="servicePanel-inner">
+                   <div class="serviceMsgPanel">
+                        <div class="serviceMsgPanel-hd"><a href="#"><span>Close</span></a></div>
+                        <div class="serviceMsgPanel-bd">
+                          <!--QQ-->
+                          <if condition="$Think.config.qq_account neq ''">
+                            <foreach name="online_qq" item="vo">
+                                <div class="msggroup">
+                                    <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=<{$online_qq.$key}>&site=qq&menu=yes"><img class="qqimg" src="http://wpa.qq.com/pa?p=2:<{$online_qq.$key}>:52" alt="QQ online"/><{$key}></a>
+                                </div>
+                            </foreach>
+                          </if>
+                          <!--MSN-->  
+                          <if condition="$Think.config.msn_account neq ''">
+                            <foreach name="online_msn" item="vo">
+                              <div class="msggroup">
+                                <a href="msnim:chat?contact=<{$online_msn.$key}>" target="blank"><img class="qqimg" src="__PUBLIC__/images/msn.jpg" alt="msn online"/> <{$key}></a>
+                               </div>
+                            </foreach>
+                          </if>
+                          <!--SKYPE--> 
+                          <if condition="$Think.config.skype_account neq ''">
+                            <foreach name="online_skype" item="vo">
+                              <div class="msggroup">
+                                <a href="skype:<{$online_skype.$key}>?chat"><img  class="qqimg" src="__PUBLIC__/images/skype.gif" alt="Skype online"> <{$key}></a>
+                              </div>
+                            </foreach>
+                          </if>
+                          <!--taobao--> 
+                          <if condition="$Think.config.taobao_account neq ''">
+                            <foreach name="online_taobao" item="vo">
+                              <div class="msggroup">
+                                <a target=blank href="http://amos.im.alisoft.com/msg.aw?v=2&uid=<{$online_taobao.$key}>&site=cntaobao&s=1&charset=utf-8"><img SRC="http://amos.im.alisoft.com/online.aw?v=2&uid=<{$online_taobao.$key}>&site=cntaobao&s=1&charset=utf-8" alt="Contact us"></a>
+                               </div>
+                            </foreach>
+                          </if>
+                          <!--1688--> 
+                          <if condition="$Think.config.1688_account neq ''">
+                            <foreach name="online_1688" item="vo">
+                              <div class="msggroup">
+                                <a target="_blank" href="http://amos.alicdn.com/msg.aw?v=2&uid=<{$online_1688.$key}>&site=cnalichn&s=10&charset=UTF-8" ><img src="http://amos.alicdn.com/online.aw?v=2&uid=<{$online_1688.$key}>&site=cnalichn&s=10&charset=UTF-8" alt="Contact us"/></a>
+                              </div>
+                            </foreach>
+                          </if>
+                          <!--alibaba-->
+                          <if condition="$Think.config.alibaba_account neq ''">
+                            <foreach name="online_alibaba" item="vo">
+                              <div class="msggroup">
+                                <a class="alitalk-link" data-uid="<{$online_alibaba.$key}>" target="_blank" href="http://amos.alicdn.com/msg.aw?v=2&uid=<{$online_alibaba.$key}>&site=enaliint&s=22&charset=UTF-8"><img class="qqimg" src="http://amos.alicdn.com/online.aw?v=2&uid=<{$online_alibaba.$key}>&site=enaliint&s=22&charset=UTF-8" alt="Contact us"/> <{$key}></a>
+                               </div>
+                            </foreach>
+                          </if>
+                          
+                        </div>
+                        <div class="serviceMsgPanel-ft"></div>
+                    </div>
+                    <div class="arrowPanel">
+                         <div class="arrow02"></div>
+                    </div>
+              </div>
+         </div>
+         <div class="messagePanel">
+              <div class="messagePanel-inner">
+                   <div class="formPanel">
+                         <div class="formPanel-hd"><span style="float:left">Contact us</span><a href="#"><span>Close</span></a></div>
+                         <div class="formPanel-bd">
+                            <p>Company: <{$Think.config.web_ename}></p>
+                            <p>Contact: <{$Think.config.web_econtacts}></p>
+                            <p>Tel: <{$Think.config.web_tel}></p>
+                            <p>Phone: <{$Think.config.web_phone}></p>
+                            <p>E-mail: <{$Think.config.web_email}></p>
+                            <p>Address: <{$Think.config.web_eadd}></p>
+                         </div>
+
+                   </div>
+                   <div class="arrowPanel">
+                        <div class="arrow01"></div>
+                        <div class="arrow02"></div>
+                   </div>
+              </div>
+         </div>
+         <if condition="$Think.config.web_qrcode neq ''">
+         <div class="qrcodePanel">
+              <div class="qrcodePanel-inner">
+                   <div class="codePanel">
+                         <div class="codePanel-hd"><span style="float:left">Scan the qr code</span><a href="#"><span>close</span></a></div>
+                         <div class="codePanel-bd">
+                              <img src="__ROOT__/Uploads/<{$Think.config.web_qrcode}>" alt="Qr code"/>
+                         </div>
+                   </div>
+                   <div class="arrowPanel">
+                        <div class="arrow01"></div>
+                        <div class="arrow02"></div>
+                   </div>
+              </div>
+         </div>
+         </if>
+    </div>
+    <load href="__PUBLIC__/js/online.js"/>
+ 
+</if>
