@@ -1,0 +1,9 @@
+<if condition="$tags">
+	<div class="tags">
+	<a class="tag_active" href="<{:U('Tags/index',array('lang'=>'e'))}>">TAGS</a>
+	      <volist name="tags" id="vo">
+	        <a href="<{:W('Taghref',array('id'=>$vo['id'],'type'=>$vo['type'],'lang'=>'e'))}>" target="_blank"><{$vo.ename}></a>
+	      </volist>
+	<div class="clear"></div>
+	</div>
+</if>

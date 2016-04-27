@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>在线订购-<{$Think.config.seo_title}></title>
+<meta name="keywords" content="<{$Think.config.seo_keywords}>" />
+<meta name="description" content="<{$Think.config.seo_description}>" />
+<script language="javascript">var catid="",pid="",bid=31;</script>
+<include file='Public:file'/>
+<load href="../Public/js/left_active.js"/>
+<SCRIPT language=javaScript>
+function CheckJob()
+{
+    if (document.myform.product.value.length==""){
+        alert ("产品名称不能为空！");
+        document.myform.product.focus();
+        return false;
+    }
+    if (document.myform.name.value.length==""){
+        alert ("联系人不能为空！");
+        document.myform.name.focus();
+        return false;
+    }
+    if (document.myform.tel.value.length==""){
+        alert ("电话不能为空！");
+        document.myform.tel.focus();
+        return false;
+    }
+ }
+</SCRIPT>
+</head>
+<body>
+<include file='Public:c_head'/>
+
+<div class="flash_list"><div class="flash_img" style="background:url('__ROOT__/Uploads/01.jpg') no-repeat center top"></div></div>
+
+<div id="main">
+
+    <div id="center">
+
+      <div id="left" class="leftbg">
+          <div class="category_title"></div>
+          <ul class="category" id="left_cat">
+             <li><a id="cat_active" href="__SELF__">在线订购</a></li>
+          </ul> 
+          <include file='Public:c_contact'/>
+      </div>
+      <!-- end of left -->
+        
+        <div id="right">
+          <div class="path_title"><span class="span_left">在线订购 <b>Inquiry</b></span><span class="span_right">您现在的位置：<a href="<{:W('Index',array('cnen'=>'cn','lang'=>'c'))}>">网站首页</a> &gt; 在线订购</span></div>
+          
+        <form id="myform" name="myform" method="post" action="__ROOT__/?m=Inquiry&a=check&g=c" onSubmit="return CheckJob()">
+        <dl class="table">
+            <dt>产品名称：</dt>
+            <dd><input name="product" type="text" value="<{$ordername}>" class="textwidth"/> <span style="color:#F00; font-size:15px;"> * </span></dd>
+            <dt>订购数量：</dt>
+            <dd><input name="num" type="text" class="textwidth"/></dd>
+            <dt>联系人：</dt>
+            <dd><input name="name" type="text" class="textwidth"/> <span style="color:#F00; font-size:15px;"> * </span></dd>
+            <dt>公司名称：</dt>
+            <dd><input name="company" type="text" class="textwidth"/></dd>
+            <dt>联系地址：</dt>
+            <dd><input name="add" type="text" class="textwidth"/></dd>
+            <dt>联系电话：</dt>
+            <dd><input name="tel" type="text" class="textwidth"/> <span style="color:#F00; font-size:15px;"> * </span></dd>
+            <dt>传 真：</dt>
+            <dd><input name="fax" type="text" class="textwidth"/></dd>
+            <dt>电子邮箱：</dt>
+            <dd><input name="email" type="text" class="textwidth"/></dd>      
+            <dt>详细内容：</dt>
+            <dd class="biezhu"><textarea name="contents" class="areawidth"></textarea></dd>
+            <dt>验证码：</dt>
+            <dd><input name="code" style="width:50px;"><img class="codeimg" src="<{:U('Common/verify')}>" onclick='this.src=this.src+"?"+Math.random()'/></dd>
+            <dt></dt>
+            <dd><input type="submit" name="button" value="提交订单" class="submit_btn"/>
+            <input name="reset" type="reset"  class="submit_btn" value="重置" /></dd>
+            <div class="clear"></div>
+        </dl>
+        </form>
+            
+        </div>
+        <!-- end of right -->
+        
+        <div class="clear"></div>
+    </div>
+    <!-- end of center -->
+
+</div>
+<!-- end of main -->
+
+<include file='Public:c_foot'/>
+
+</body>
+</html>

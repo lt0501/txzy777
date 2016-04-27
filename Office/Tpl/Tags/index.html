@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<load href="../Public/js/jquery-1.7.2.min.js"/>
+<load href="../Public/css/index.css"/>
+<title>TAGS标签管理</title>
+<script type="text/javascript">
+	$(function () {
+		$( '.del' ).click( function () {
+			return confirm('确认删除该标签？');
+		} );
+	});
+</script>
+</head>
+<body>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td class="LineRightBlue1">
+        <table width="95%" border="0" cellpadding="0" cellspacing="0" style="margin-left:20px;">
+      <tr>
+        <td width="88%" height="24">快捷操作：【<a href="<{:U('Tags/add')}>">添加TAGS标签</a>】
+          &nbsp;&nbsp;&nbsp;
+          <select  onchange="location.href=this.value;">
+            <option value="<{:U('Tags/index')}>" selected>－按栏目索引－</option>
+            <option value="<{:U('Tags/index',array('type'=>'Product'))}>" <eq name="Think.get.type" value="Product">selected="selected"</eq>>产品栏目</option>
+            <option value="<{:U('Tags/index',array('type'=>'New'))}>" <eq name="Think.get.type" value="New">selected="selected"</eq>>新闻栏目</option>
+            <option value="<{:U('Tags/index',array('type'=>'Photo'))}>" <eq name="Think.get.type" value="Photo">selected="selected"</eq>>图片栏目</option>
+            <option value="<{:U('Tags/index',array('type'=>'Download'))}>" <eq name="Think.get.type" value="Download">selected="selected"</eq>>下载栏目</option>
+          </select >
+        </td>
+        <td width="12%" align="right" class="bt_add"></td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+</table>
+<form name="theForm" method="post" action="<{:U('uporder')}>">
+  <div class="tablelisthead">
+    <ul pid='0'>
+      <li class="li_10">排序</li>
+      <li class="li_40">标签名称</li>
+      <li class="li_20">所属类目</li>
+      <li class="li_20">编辑</li>
+    </ul>
+  </div>
+  
+  <div id="languageBox2">
+    <div class="tablelist">
+    <volist name='tags' id='vo'>
+      <ul onmouseover="this.style.background ='#FFFDD7'" onmouseout="this.style.background ='#FFFFFF'" style="height:30px;">
+          <li class="li_10">
+            <input type="text" value="<{$vo.sort}>" name="sort[<{$vo.id}>]" class="listinput"/>
+          </li>
+          <li class="li_40"><{$vo.name}> (<{$vo.ename}>)</li>
+          <li class="li_20">
+            <switch name="vo.type">
+              <case value="Product">[ 产品 ]</case>
+              <case value="New">[ 新闻 ]</case>
+              <case value="Photo">[ 图片 ]</case>
+              <case value="Download">[ 下载 ]</case>
+              <default />
+            </switch>
+          </li>
+          <li class="li_20">
+            <a href="<{:U('mod',array('id'=>$vo['id']))}>" >修改</a> | 
+            <a href="<{:U('del',array('id'=>$vo['id']))}>" class='del'>删除</a>
+          </li>
+      </ul>
+    </volist>  
+    </div>
+  </div>
+  
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td height="36" class="BotNavBg">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="8%" style="padding-left:5px;">
+            <input type="submit" value="更新排序" class="bginput">
+            </td>
+            <td width="92%" align="center">
+            <div class="page"><{$show}></div>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<div id="footer">
+<!-- <if condition="isset($isindex)">
+    <div class="links">
+		Links: <{:W('Link',array('lang'=>'e'))}>
+    </div>
+</if> -->
+
+	<div class="header_bottom">
+    <div class="container">
+    	<div class="header_bottom-box">
+    		<div class="header_bottom_left">
+    			<div class="logo">
+    				<{:W('Navbottom',array('lang'=>'e'))}>
+    			</div>
+    		</div>
+    		<div class="header_bottom_right copyright <if condition='isset($isindex)'>copyright_index</if>">
+      		<p><{$Think.config.web_copyright}></p>
+  		  </div>
+    	</div>
+    </div>
+  </div>
+
+    <div class="copyright <if condition='isset($isindex)'>copyright_index</if>">
+        <p><{$Think.config.web_ecopyright}>&nbsp;<{$Think.config.web_icp}> <a href="__ROOT__/e_sitemap.html" target="_blank">Sitemap</a></p>
+        <p>Add: <{$Think.config.web_eadd}> &nbsp;Tel: <{$Think.config.web_tel}> &nbsp;Fax: <{$Think.config.web_fax}>&nbsp;<{$Think.config.web_count}></p>
+    </div>
+	<if condition='isset($isindex)'><{:W('Tags',array('lang'=>'e'))}></if>
+</div>
+<!-- end of footer -->
+<include file='Public:translate'/>
+<{:W('Online',array('lang'=>'e'))}>
+<{$Think.config.web_eshare}>

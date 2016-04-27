@@ -1,0 +1,16 @@
+<if condition="$photo">
+<div class="scrolllist" id="s1">
+    <a class="abtn aleft" href="#left" title="Left"></a>
+    <div class="imglist_w">
+      <ul class="imglist">
+      	<volist name='photo' id='vo' offset="0" length="8">
+       	<li><a target="_blank" href="<{:W('Href',array('url'=>$vo['url'],'id'=>$vo['id'],'type'=>'Photo','lang'=>'e'))}>" title="<{$vo.ename}>"><img name="picautozoom" width="120" height="120" src="__ROOT__/Uploads/<{$vo.thumb}>" alt="<{$vo.ename}>"/></a>
+              <p><a href="<{:W('Href',array('url'=>$vo['url'],'id'=>$vo['id'],'type'=>'Photo','lang'=>'e'))}>" title="<{$vo.ename}>" target="_blank"><{$vo.ename|mb_substr=###,0,10,'utf-8'}></a></p>
+       	</li>
+	</volist>
+      </ul>
+    </div>
+    <a class="abtn aright" href="#right" title="右移"></a>
+</div>
+<!-- end of scrolllist -->
+</if>

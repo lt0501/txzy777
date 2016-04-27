@@ -1,0 +1,43 @@
+<div id="header">
+  <div class="header_top">
+    <div class="container">
+      <div class="header_top-box">
+         <div class="header-top-left">
+         </div>
+         <div class="cssmenu">
+            <ul>
+                <li><a href="<{:W('Index',array('cnen'=>'cn','lang'=>'c'))}>">中文版</a></li>
+                <li><a href="#">Technology R&D</a></li>
+                <li><a href="#">Custom Service</a></li>
+                <li><a href="#">Success Case</a></li>
+                <li><a href="/en/aboutus.html">About Us</a></li>
+            </ul>
+          </div>
+        <div class="clearfix"></div>
+     </div>
+    </div>
+  </div>
+
+  <div class="header_bottom">
+        <div class="container">
+         <div class="header_bottom-box">
+          <div class="header_bottom_left">
+            <div id="logo"><img src="__ROOT__/Uploads/<{$Think.config.web_logo}>" alt="<{$Think.config.web_ename}>"/></div>
+            <div class="clearfix">   
+            </div>
+          </div>
+          <div class="header_bottom_right">
+            <div class="search">
+              <form id="searchform" method="get" action="<{:U('Search/index',array('g'=>'e'))}>">
+                  <input type="text" name="name" class="input" value="Input the keywords" onblur="if(this.value.length<1)this.value=this.defaultValue;" onfocus="if(this.value==this.defaultValue)this.value=''"/>
+                  <input type="submit" value="search">
+              </form>
+              </div>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+  </div>
+      <{:W('Nav',array('lang'=>'e'))}>
+</div>
+<!-- end of header -->

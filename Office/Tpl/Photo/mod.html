@@ -1,0 +1,226 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<load href="../Public/js/jquery-1.7.2.min.js"/>
+<load href="../Public/css/index.css"/>
+<load href="../Public/js/common.js"/>
+<load href="../Public/js/quickView.js"/>
+<title>修改图片</title>
+<include file='Public:kinde'/>
+<script type="text/javascript">
+	$(function () {
+		$( '.del' ).click( function () {
+			return confirm('确认删除该图片？');
+		} );
+	});
+</script>
+</head>
+<body>
+<DIV class="BodyRight">
+<DIV class="PageContent">
+<TABLE width="100%" border="0" cellspacing="0" cellpadding="0">
+  <TBODY>
+  <TR>
+    <TD>
+      <TABLE width="100%" border="0" cellspacing="0" cellpadding="0">
+        <TBODY>
+        <TR>
+
+          <TD width="85" align="center" class="Move" id="setting1">
+            <A onClick="javascript:settingselect('1')" href="javascript:void(0);">中文信息</A>
+          </TD>
+          <TD width="5" align="center"><IMG src="../Public/images/tiao.gif"></TD>
+
+          <TD width="85" align="center" class="Out" id="setting2">
+            <A onClick="javascript:settingselect('2')" href="javascript:void(0);">英文信息</A>
+          </TD>
+          <TD align="left" class="LineRight" style="padding-left: 10px;"></TD>
+        </TR>
+
+      </TBODY>
+    </TABLE>
+  </TD>
+</TR>
+  <TR>
+    <TD class="LineRightBlue">
+      <TABLE width="95%" style="margin-left: 20px;" border="0" cellspacing="0" 
+      cellpadding="0">
+        <TBODY>
+        <TR>
+          <TD width="88%" height="24">图片管理 &gt; 修改图片</TD>
+          <TD width="12%" height="24" align="right"></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></DIV></DIV>
+
+<form action="<{:U('updatephoto')}>" method="post" name="myform" id="myform" enctype="multipart/form-data">
+
+<DIV id="settingBox1">
+<DIV class="PageContent">
+<table width="98%" border="0" style="margin:20px;" class="ListCategory">
+  <tr>
+    <td width="10%">图片名称：</td>
+    <td width="90%" height="35"><input name="name" type="text" class="FormSmall" value="<{$photolist.name}>" style="width: 320px;"> 
+	<span style="color:#F00; font-size:12px;">*必填</span>
+    </td>
+  </tr>
+  
+  <tr>
+    <td>图片分类:</td>
+    <td height="35">
+      <select name="pid" style="height:28px;">
+      <volist name='list' id='vo'>
+          <option value="<{$vo.id}>" <eq name="vo.id" value="$photolist.pid">selected="selected"</eq>><{$vo.html}><if condition='$vo.level gt 0'>┕</if><{$vo.name}></option>
+      </volist>
+      </select>
+    </td>
+  </tr>
+
+  <tr>
+    <td>排序ID：</td>
+    <td height="35"><input name="sort" type="text" class="FormSmall" value="<{$photolist.sort}>" style="width: 50px;"> <span style="color:#F00; font-size:12px;">*必填</span></td>
+  </tr>
+
+  <tr>
+    <td>URL优化：</td>
+    <td height="35"><input name="url" type="text" value="<{$photolist.url}>" class="FormSmall" style="width: 320px;"> <a title='URL只能是字母，数字，下划线或-'style="margin-left: 5px;" href="#"><img src="../Public/images/help.gif"></a></td>
+  </tr>
+  
+  <tr>
+    <td>SEO标题：</td>
+    <td height="35"><input name="title" type="text" value="<{$photolist.title}>" class="FormSmall" style="width: 320px;"> 
+	<span style="color:#F00; font-size:12px;">*必填</span>
+    </td>
+  </tr>
+  
+  <tr>
+    <td>SEO关键字：</td>
+    <td height="35"><input name="keywords" type="text" class="FormSmall" value="<{$photolist.keywords}>" style="width: 320px;"></td>
+  </tr>
+  
+  <tr>
+    <td>SEO描述：</td>
+    <td height="110"><textarea name="description" class="FormSmall" style="width: 450px; height: 80px;"><{$photolist.description}></textarea>
+    </td>
+  </tr>
+  
+  <tr>
+    <td>缩略图：</td>
+    <td height="35">
+    <empty name='photolist.thumb'>
+    <input type='file' name='thumb'>
+    <input type="hidden" name="tnum" value="1">
+    <else/>
+      <p style="padding:4px 0;"><img src="__ROOT__/Uploads/<{$photolist.thumb}>" width="60" height="60"/>
+      <a href="<{:U('delphoto',array('name'=>$photolist['thumb'],'id'=>$photolist['id'],'field'=>'thumb'))}>" class='del'>删除该图片</a>
+      </p>
+     </empty> 
+    </td>
+  </tr>
+  
+  <tr>
+    <td>追加主图数量：</td>
+    <td height="35">
+	<script language="JavaScript" type="text/javascript">
+    function setUrlNum(){
+    str='';
+    
+        if(!document.myform.Num.value){
+            document.myform.Num.value=1;
+        }
+        for(i=1;i<=document.myform.Num.value;i++){
+            str+= '<p style="margin:6px 2px; font-size:12px;">追加主图'+i+'：<input name="photo[]" type="file" id="photo'+i+'"></p>';
+        }
+            document.getElementById('UpID').innerHTML=str;
+    }
+    </script>
+    <input value="0" name="Num" class="FormSmall" style="width: 50px;"/>
+    <input onClick="setUrlNum();" type="button" value="设定" class="bginput" style="width:45px; height:28px;"/>
+    </td>
+  </tr>
+  
+  <tr>
+    <td>图片主图：</td>
+    <td height="35">
+      <notempty name="photo">
+      <volist name='photo' id='vo'>
+      <p style="padding:1px;"><img src="__ROOT__/Uploads/<{$photo[$key]}>" width="60" height="60"/>
+      <a href="<{:U('delphoto',array('name'=>$photo[$key],'id'=>$photolist['id'],'field'=>'photo'))}>" class='del'>删除该图片</a>
+      </p>
+      </volist>
+        <div id="UpID"></div>
+        <div style="padding:10px 0px 10px 0px;"><a href="<{:U('delmain',array('id'=>$photolist['id']))}>" class='del'>[ 删除全部主图 ]</a></div>
+      <else/>
+          <div id="UpID"></div>
+      </notempty> 
+    </td>
+  </tr>
+  
+  <tr>
+    <td>图片内容：</td>
+    <td>
+    <textarea name="contents" style="width:680px; height:320px; margin:8px 0;visibility:hidden;"><{$photolist.contents}></textarea>
+    </td>
+  </tr>
+</table>
+</DIV>
+</DIV>
+
+<DIV class="close" id="settingBox2">
+<DIV class="PageContent">
+<table width="98%" border="0" style="margin:20px;" class="ListCategory">
+  <tr>
+    <td width="10%" style="color:blue;">图片名称 (英文)：</td>
+    <td width="90%" height="35"><input name="ename" value="<{$photolist.ename}>" type="text" class="FormSmall" style="width: 320px;"> 
+  <span style="color:#F00; font-size:12px;">*必填</span>
+    </td>
+  </tr>
+
+  <tr>
+    <td style="color:blue;">SEO标题 (英文)：</td>
+    <td height="35"><input name="etitle" type="text" value="<{$photolist.etitle}>" class="FormSmall" style="width: 320px;"> 
+  <span style="color:#F00; font-size:12px;">*必填</span>
+    </td>
+  </tr>
+  
+  <tr>
+    <td style="color:blue;">SEO关键字 (英文)：</td>
+    <td height="35"><input name="ekeywords" type="text" value="<{$photolist.ekeywords}>" class="FormSmall" style="width: 320px;"></td>
+  </tr>
+  
+  <tr>
+    <td style="color:blue;">SEO描述 (英文)：</td>
+    <td height="110"><textarea name="edescription" class="FormSmall" style="width: 450px; height: 80px;"><{$photolist.edescription}></textarea>
+    </td>
+  </tr>
+  
+  <tr>
+    <td style="color:blue;">图片内容 (英文)：</td>
+    <td>
+    <textarea name="econtents" style="width:680px; height:320px; margin:8px 0;visibility:hidden;"><{$photolist.econtents}></textarea>
+    </td>
+  </tr>
+</table>
+</DIV>
+</DIV>
+
+<div style="float:left; margin:-10px 0px 20px 135px;">
+    <input type="hidden" name="id" value="<{$photolist.id}>">
+    <input type="submit" value="确认修改" class="bginput">&nbsp;&nbsp;
+</div>
+
+</form>
+
+<SCRIPT type="text/javascript">
+
+function settingselect(id){
+  document.getElementById('settingBox1').className="close";
+  document.getElementById('settingBox2').className="close";
+  document.getElementById('setting1').className="Out";
+  document.getElementById('setting2').className="Out";
+  
+  document.getElementById('setting'+id).className="Move";
+  document.getElementById('settingBox'+id).className="";
+}
+
+</SCRIPT>
+</body>
+</html>

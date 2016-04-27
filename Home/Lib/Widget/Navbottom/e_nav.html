@@ -1,0 +1,16 @@
+<div class="menubottom">
+  <div class="container">
+    <div>
+       <ul class="megamenu skyblue">
+        <a href="index.html"><img src="__ROOT__/Uploads/<{$Think.config.web_logo}>" alt="<{$Think.config.web_name}>"></a>
+        <volist name='nav' id='vo'>
+          <li>
+            <a id="nav_active<{$vo.id}>" href="<{:W('Listhref',array('url'=>$vo['url'],'id'=>$vo['id'],'link'=>$vo['link'],'lang'=>'c'))}>"><{$vo.ename}>
+            </a>
+          </li>
+        </volist>
+     </ul>
+    </div>
+</div>
+</div>
+<script>$(document).ready(function(){$(".megamenu").megamenu();});</script>
