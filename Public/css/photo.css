@@ -1,0 +1,38 @@
+.title{line-height:30px;height:30px;margin:0 0 15px 0;}
+.title h1{font-size:18px;font-family:microsoft yahei;text-align:center;font-weight:normal;margin:0;}
+.item{color:#999;text-align:center;margin:20px 0;font-family:arial;border-bottom:1px solid #f0f0f0;padding:0 0 15px 0;}
+.content{word-break:break-all;line-height:22px;}
+.content p{margin:15px 0;font-size:14px;}
+.content img{max-width:900px;}
+
+.pre,.next{line-height:30px;height:30px;}
+
+.like p{font-weight:bold;font-size:14px;}
+.like ul{margin:0;padding:0;list-style:none;}
+.like ul li{line-height:25px;height:25px;font-family:宋体;}
+
+.infodot{border-top:1px dashed #ccc;margin:15px 0;}
+
+.ctitle{font-size:14px;font-weight:bold;border-bottom:1px solid #f0f0f0;line-height:30px;height:30px;margin:0 0 15px 0;}
+.ctitle span{float:right;font-size:12px;font-weight:normal;font-family:宋体;}
+
+/*
+组图开始
+小图部分
+*/
+.thumbpic{margin:30px auto;width:500px;}
+#piclist{width:460px;float:left;overflow:hidden;height:86px;position:relative;}
+#piclist ul{margin:0;padding:0;list-style:none;overflow:hidden;width:20000px;position:relative;}
+#piclist ul li{float:left;cursor:pointer;position:relative;background:url(../images/ico_none.gif) no-repeat center top;height:86px;}
+#piclist ul li img{height:58px;width:78px;margin:0 4px;padding:3px;}
+#piclist .hover{background:url(../images/ico_bg.gif) no-repeat center top;height:86px;}
+#piclist ul li tt{background:#000;color:#FFF;position:absolute;z-index:20; font-family:arial;font-size:12px;line-height:16px;padding:0 5px;margin:45px 0 0 -85px;}
+
+.thumbpic a.bntprev{float:left;width:20px;height:64px;display:block;outline:none;background:url(../images/ico_left.gif) no-repeat center;}
+.thumbpic a.bntnext{float:left;width:20px;height:64px;display:block;outline:none;background:url(../images/ico_right.gif) no-repeat center;}
+
+#originalpic{position:relative;overflow:hidden;zoom:1;height:100%;clear:both;text-align:center;}
+#originalpic img{display:none;position:relative;max-width:900px;}
+#aPrev{position:absolute;z-index:10;left:0;top:0;display:block;width:50%;height:100%;background:url(../images/blank.gif);}
+#aNext{position:absolute;z-index:10;right:0;top:0;display:block;width:50%;height:100%;background:url(../images/blank.gif);}
+

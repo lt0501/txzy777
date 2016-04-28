@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<load href="../Public/css/index.css"/>
+<load href="../Public/js/quickView.js"/>
+<title>修改栏目</title>
+    <if condition="$type eq 'page'">
+      <include file='Public:kinde'/>
+    </if>
+<SCRIPT language=javaScript>
+function CheckJob()
+{
+	if (document.myform.name.value.length==""){
+		alert ("栏目名称不能为空！");
+		document.myform.name.focus();
+		return false;
+	}
+	var number = document.getElementById('sort').value;
+	var reg = /^\d+$/;
+	if (!number.match(reg)){
+		alert ("排序号必须为数字!");
+		document.myform.sort.focus();
+		return false;
+	}
+ }
+</SCRIPT>
+</head>
+<body>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td class="LineRightBlue1">
+      <table width="95%" border="0" cellpadding="0" cellspacing="0" style="margin-left:20px;">
+      <tr>
+        <td width="88%" height="24">修改【<{$list.name}>】栏目</td>
+        <td width="12%" align="right" class="bt_add"></td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+</table>
+
+<form action="<{:U('updatelist')}>" method="post" name="myform" id="myform"  onSubmit="return CheckJob()">
+<DIV class="PageContent">
+<table width="90%" border="0" style="margin:20px;" class="ListCategory">
+  <tr>
+    <td width="11%">栏目名称：</td>
+    <td width="89%" height="35"><input name="name" type="text" value="<{$list.name}>" class="FormSmall"><span style="color:#F00; font-size:12px;"> *必填</span></td>
+  </tr>
+  <tr>
+    <td style="color:blue;">栏目名称 (英文)：</span></td>
+    <td height="35"><input name="ename" type="text" value="<{$list.ename}>" class="FormSmall"><span style="color:#F00; font-size:12px;"> *必填</span></td>
+  </tr>
+
+  <if condition="$pid eq 0">
+
+  <tr>
+    <td>栏目模型：</td>
+    <td height="35">
+      <switch name="list.type">
+          <case value="product">产品模型</case>
+          <case value="new">新闻模型</case>
+          <case value="photo">图片模型</case>
+          <case value="download">下载模型</case>
+          <case value="page">单页模型</case>
+          <case value="link">链接模型</case>
+          <default />未设置
+      </switch>
+      <input name="type" type="hidden" value="<{$list.type}>">
+    </td>
+  </tr>
+
+  </if>
+
+  <tr>
+    <td>导航菜单：</td>
+    <td height="35" valign="middle">
+    <select name="nav">
+        <option value="1" <eq name="list.nav" value="1">selected="selected"</eq>>显示</option>
+        <option value="0" <eq name="list.nav" value="0">selected="selected"</eq>>隐藏</option>
+    </select>
+    </td>
+  </tr>
+  <tr>
+    <td>排序ID：</td>
+    <td height="35"><input name="sort" id="sort" type="text" value="<{$list.sort}>" class="FormSmall" style="width: 50px;"></td>
+  </tr>
+
+  <neq name="list.type" value="link">
+
+  <tr>
+    <td>URL优化：</td>
+    <td height="35"><input name="url" type="text" value="<{$list.url}>" class="FormSmall"> <a title='URL只能是字母、数字或-'style="margin-left: 5px;" href="#"><img src="../Public/images/help.gif"></a></td>
+  </tr>
+  <tr>
+    <td>SEO标题：</td>
+    <td height="35"><input name="title" type="text" value="<{$list.title}>" class="FormSmall" style="width: 320px;"></td>
+  </tr>
+  <tr>
+    <td>SEO关键字：</td>
+    <td height="35"><input name="keywords" type="text" value="<{$list.keywords}>" class="FormSmall" style="width: 320px;"></td>
+  </tr>
+  <tr>
+    <td>SEO描述：</td>
+    <td height="110"><textarea name="description" class="FormSmall" style="width: 450px; height: 80px;"><{$list.description}></textarea>
+    </td>
+  </tr>
+  <tr>
+    <td style="color:blue;">SEO标题 (英文)：</td>
+    <td height="35"><input name="etitle" type="text" value="<{$list.etitle}>" class="FormSmall" style="width: 320px;"></td>
+  </tr>
+  <tr>
+    <td style="color:blue;">SEO关键字 (英文)：</td>
+    <td height="35"><input name="ekeywords" type="text" value="<{$list.ekeywords}>" class="FormSmall" style="width: 320px;"></td>
+  </tr>
+  <tr>
+    <td style="color:blue;">SEO描述 (英文)：</td>
+    <td height="110"><textarea name="edescription" class="FormSmall" style="width: 450px; height: 80px;"><{$list.edescription}></textarea>
+    </td>
+  </tr>
+
+  <else/>
+
+  <tr>
+    <td>链接地址：</td>
+    <td height="35"><input name="link" type="text" value="<{$list.link}>" class="FormSmall" style="width: 320px;"><a title='(1)站内链接：如 /aaa/<br>(2)站外链接：需以http://开头'style="margin-left: 5px;" href="#"><img src="../Public/images/help.gif"></a></td>
+  </tr>
+  <tr>
+    <td style="color:blue;">链接地址 (英文)：</td>
+    <td height="35"><input name="elink" type="text" value="<{$list.elink}>" class="FormSmall" style="width: 320px;"><a title='(1)站内链接：如 /aaa/<br>(2)站外链接：需以http://开头'style="margin-left: 5px;" href="#"><img src="../Public/images/help.gif"></a>
+    </td>
+  </tr>
+<tr>
+
+  </neq>
+  
+
+<if condition="$type eq 'page'">  
+  <tr>
+    <td>单页内容：</td>
+    <td>
+    <textarea name="contents" style="width:670px; height:290px; margin:8px 0;visibility:hidden;"><{$list.contents}></textarea>
+    </td>
+  </tr>
+  <tr height="310">
+    <td style="color:blue;">单页内容 (英文)：</td>
+    <td>
+    <textarea name="econtents" style="width:670px; height:290px; margin:8px 0;visibility:hidden;"><{$list.econtents}></textarea>
+    </td>
+  </tr>
+</if>
+  
+  <tr>
+    <td height="55" align="center">  
+    </td>
+    <td height="55" align="left">
+    <input name="id" type="hidden" value="<{$list.id}>">
+    <input type="submit" value="确认修改" class="bginput">
+    </td>
+    </tr>
+</table>
+</DIV>
+</form>
+</body>
+</html>

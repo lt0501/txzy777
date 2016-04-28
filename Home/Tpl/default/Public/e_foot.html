@@ -13,16 +13,14 @@
     				<{:W('Navbottom',array('lang'=>'e'))}>
     			</div>
     		</div>
-    		<div class="header_bottom_right copyright <if condition='isset($isindex)'>copyright_index</if>">
-      		<p><{$Think.config.web_copyright}></p>
-  		  </div>
     	</div>
     </div>
   </div>
 
     <div class="copyright <if condition='isset($isindex)'>copyright_index</if>">
-        <p><{$Think.config.web_ecopyright}>&nbsp;<{$Think.config.web_icp}> <a href="__ROOT__/e_sitemap.html" target="_blank">Sitemap</a></p>
-        <p>Add: <{$Think.config.web_eadd}> &nbsp;Tel: <{$Think.config.web_tel}> &nbsp;Fax: <{$Think.config.web_fax}>&nbsp;<{$Think.config.web_count}></p>
+        <p style="float:left;"><{$Think.config.web_ecopyright}>&nbsp;<{$Think.config.web_icp}> <a href="__ROOT__/e_sitemap.html" target="_blank">Sitemap</a></p>
+        <p style="float:left;margin-left:90px;"><{$Think.config.web_copyright}></p>
+        <p style="margin-left:700px;">Add: <{$Think.config.web_eadd}> &nbsp;Tel: <{$Think.config.web_tel}> &nbsp;Fax: <{$Think.config.web_fax}>&nbsp;<{$Think.config.web_count}></p>
     </div>
 	<if condition='isset($isindex)'><{:W('Tags',array('lang'=>'e'))}></if>
 </div>
