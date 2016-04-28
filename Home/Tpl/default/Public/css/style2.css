@@ -48,7 +48,7 @@ body a{
 	font-size: 0.8125em;
 }
 .cssmenu li> a:hover {
-	color: #ACEAFA;
+	color: #006baf;
 	text-decoration:none;
 }
 /* PREFIXED CSS */
@@ -230,7 +230,7 @@ body a{
 	color: #fff;
 }
 .header_bottom{
-	padding:0em 0 0em;
+	padding:0em 0 1em;
 }
 .header_bottom-box, .header_top-box, .sellers_grid{
 	padding:0 15px;
@@ -246,6 +246,9 @@ body a{
 }
 .logo img{
 	margin-left: 23px;
+}
+.logobottom img{
+	margin-left: 5px;
 }
 ul.clock{
 	padding:0;
@@ -268,7 +271,7 @@ ul.clock li.clock_desc{
 	margin-top:8px;
 }
 .header_bottom_right{
-	padding-top: 20px;
+	padding-top: 5px;
 	width:25%;
 	float:right;
 }
@@ -390,7 +393,7 @@ span.item-cat:hover{
 	width: 1125px !important;
 }
 .newswidthtop{
-	margin-top: 50px;
+	margin-top: 40px;
 }
 /*--slider--*/
 /*--- slider-css --*/

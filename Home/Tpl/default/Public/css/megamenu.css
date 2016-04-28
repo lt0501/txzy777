@@ -16,7 +16,7 @@
 .megamenu .dropdown li:last-child{border-bottom:0}
 .megamenu .dropdown li a{float:left;width:100%;padding:10px 25px;text-decoration:none;display:block;border:0 none;font-size:14px;color:#444;background:0;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;transition:color .4s ease-in-out;-moz-transition:color .4s ease-in-out;-webkit-transition:color .4s ease-in-out;-o-transition:color .4s ease-in-out}
 .megamenu .dropdown li:hover>a{background:#dbdbdb}
-.megamenu>li>.megapanel{z-index:998;position:absolute;display:none;text-align:left;background:#ffffff;box-shadow: 0px 2px 4px #777; width:100%;top:35px;left:10px;padding:20px 30px 20px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
+.megamenu>li>.megapanel{z-index:998;position:absolute;display:none;text-align:left;background:#ffffff;box-shadow: 0px 2px 4px #777; width:100%;top:40px;left:10px;padding:20px 30px 20px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
 .megamenu .megapanel ul{margin:0;padding:0}
 .megamenu .megapanel img{cursor:pointer;-webkit-transition:border .3s linear;-moz-transition:border .3s linear;-o-transition:border .3s linear;transition:border .3s linear}.megamenu .megapanel img:hover{}.megamenu form.contact input,.megamenu form.contact textarea{font-family:Calibri,Arial;font-size:16px;color:#444;outline:0}
 .megamenu form.contact input[type="text"],
@@ -44,6 +44,11 @@
 skyblue .megapanel img:hover,.skyblue form.contact input[type="text"]:focus,.skyblue form.contact textarea:focus{}
 .skyblue form.contact input[type="submit"]{background:#00405d;text-transform:uppercase;}*/
 /* start megamenu colors */
+
+#nav_active5{
+	background: #006baf;
+    color: #fff;
+}
 .skyblue li a.color1:hover{
 	background:#EF5F21;
 	color: #ffffff;
@@ -83,4 +88,8 @@ skyblue .megapanel img:hover,.skyblue form.contact input[type="text"]:focus,.sky
 .skyblue li a.color10:hover{
 	background:#26BC85;
 	color: #ffffff;
+}
+.skybluebottom li{
+	margin-left: 100px;
+	margin-top: 20px;
 }
