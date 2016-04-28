@@ -318,6 +318,9 @@ ul.bag a:hover{
 ul.bag a:hover li p{
 	color:#11ccf7;
 }
+.col span{
+	color: #fff;
+}
 i.bag_left{
 	width: 80px;
 	height: 46px;
