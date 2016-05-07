@@ -40,7 +40,7 @@ function CheckJob()
   </tr>
 </table>
 
-<form action="<{:U('updatelist')}>" method="post" name="myform" id="myform"  onSubmit="return CheckJob()">
+<form action="<{:U('updatelist')}>" method="post" name="myform" id="myform" enctype="multipart/form-data"  onSubmit="return CheckJob()">
 <DIV class="PageContent">
 <table width="90%" border="0" style="margin:20px;" class="ListCategory">
   <tr>
@@ -149,6 +149,20 @@ function CheckJob()
     </td>
   </tr>
 </if>
+
+  <tr>
+    <td>产品图片：</td>
+    <td height="35">
+    <empty name='list.photo'>
+    <input type='file' name='photo'>
+    <input type="hidden" name="num" value="1">
+    <else/>
+      <p style="padding:4px 0;">
+     <img src="__ROOT__/Uploads/<{$list.photo}>" width="80" height="40"/>&nbsp;<a href="<{:U('delphoto',array('name'=>$list['photo'],'id'=>$list['id']))}>" class='del'>删除该图片</a><span style="color:#F00; font-size:12px;">*建议图片分辨率：176*99</span>
+      </p>
+     </empty>
+    </td>
+  </tr>
   
   <tr>
     <td height="55" align="center">  

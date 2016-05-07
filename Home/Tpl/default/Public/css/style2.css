@@ -248,7 +248,7 @@ body a{
 	margin-left: 23px;
 }
 .logobottom img{
-	margin-left: 5px;
+	margin-left: 35px;
 }
 ul.clock{
 	padding:0;
@@ -278,7 +278,7 @@ ul.clock li.clock_desc{
 .search{
 	float: right;
 	width:100%;
-	margin-right: 35%;
+	margin-right: 32%;
 }
 .search input[type="text"] {
 	padding:15px;
@@ -393,7 +393,7 @@ span.item-cat:hover{
 	color: #f84545;
 }
 .newswidth{
-	width: 1125px !important;
+	width: 1250px !important;
 }
 .newswidthtop{
 	margin-top: 40px;
@@ -636,6 +636,10 @@ ul.list2 li.list2_right{
 	height: 30px;
 	width: 32px;
 	background: url(../images/img-sprite.png) no-repeat -91px -107px;
+}
+.eight{
+	width: 1300px !important;
+	padding-left: 0px !important;
 }
 span.m_1{
 	background: #91b677;
@@ -1918,7 +1922,13 @@ ul.list li a{
 		position:absolute; 
 		z-index:3;
 		bottom: 0px;
-		left:421px; 
+		left:358px; 
+	}
+	.logobottom img {
+	    margin-left: 310px;
+	}
+	.copyright_index {
+    	margin-left: 630px;
 	}
 }
 

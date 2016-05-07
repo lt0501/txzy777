@@ -1,0 +1,34 @@
+<div>
+  <div class="container eight">
+    <div class="menu_box">
+      <ul class="megamenu skyblue">
+      <!-- <li class="active grid"><a class="color3" href="<{:W('Index',array('cnen'=>'en','lang'=>'e'))}>">Home</a></li> -->
+      <!-- <volist name='nav2' id='vo'>
+        <li><a id="nav_active<{$vo.id}>" class="color3" href="<{:W('Listhref',array('url'=>$vo['url'],'id'=>$vo['id'],'link'=>$vo['link'],'lang'=>'e'))}>"><{$vo.ename}></a>
+        </li>
+      </volist> -->
+
+      <volist name="nav4" id="vo" offset="0" length="8">
+      <div class="a-top col-md-12 col-md-6 col-lg-6">
+      <div class="newleft">
+           <div class="left-grid">
+              <h6><{$vo.ename}></h6>
+              <img src="__ROOT__/Uploads/<{$vo.photo}>" class="img-responsive">
+           </div>
+           <div class="right-grid">
+              <h4>
+                <a href="<{:W('Href',array('url'=>$vo['url'],'id'=>$vo['id'],'type'=>'new','lang'=>'c'))}>">
+                <{$vo.etitle|mb_substr=###,0,16,'utf-8'}></a>
+            </h4>
+              <p><{$vo.edescription|mb_substr=###,0,80,'utf-8'}></p>
+           </div>
+        </div>
+      </div>
+    </volist>
+
+      <div class="clearfix"> </div>
+     </ul>
+    </div>
+</div>
+</div>
+<script>$(document).ready(function(){$(".megamenu").megamenu();});</script>

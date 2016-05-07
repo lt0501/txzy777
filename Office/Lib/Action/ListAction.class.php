@@ -1,7 +1,7 @@
 <?php
 class ListAction extends CommonAction{
 	public function index(){
-		$list=M('List')->field('id,name,ename,pid,sort,type,nav')->order('sort')->select();
+		$list=M('List')->field('id,name,ename,pid,sort,type,nav,photo')->order('sort')->select();
 		$this->list=recursive($list);
 		$this->display();
 	}
@@ -22,9 +22,11 @@ class ListAction extends CommonAction{
 		$this->display();
 	}
 	
-	
+	//新增产品
 	public function savelist(){
 		$list=D('List');
+		$info= $this->uploadimg();
+		$_POST['url']=getSeoUrl('list',$_POST['url']);
 		if ($_POST['type']=='link') {
 			$_POST['url'] = (strtolower($_POST['link'])=="/feedback/" || strtolower($_POST['link'])=="/inquiry/") ? preg_replace('/\/+/', '', $_POST['link']) : 'list-'.rand(0,9).'-'.rand(0,99);
 		} else {
@@ -34,6 +36,7 @@ class ListAction extends CommonAction{
 		if($data=$list->create()){
 			if ($data['pid']!=0) {
 				$data['bid']=$this->getbigid($data['pid']);
+				$data['photo']=$info[0]['savename'];
 			}
 			if($result=$list->data($data)->add()){
 				if ($data['pid']==0) {
@@ -54,11 +57,12 @@ class ListAction extends CommonAction{
 		$this->list=D('List')->find($this->_get('id','intval'));
 		$this->display();
 	}
-	
-	
+	//更新产品
 	public function updatelist(){
 		if ($this->isPost()) {
 			$list=D('List');
+			$num=$this->_post('num','intval');
+			$_POST['url']=getSeoUrl('list',$_POST['url']);
 			if ($_POST['type']=='link') {
 				//$_POST['url'] = (stripos($_POST['link'],"http://")!== false) ? '' : preg_replace('/\/+/', '', $_POST['link']);
 				$_POST['url'] = (strtolower($_POST['link'])=="/feedback/" || strtolower($_POST['link'])=="/inquiry/") ? preg_replace('/\/+/', '', $_POST['link']) : 'list-'.rand(0,9).'-'.rand(0,99);
@@ -66,6 +70,10 @@ class ListAction extends CommonAction{
 				$_POST['url'] = ($_POST['url']!="") ? preg_replace('/[\s]+/', '-', $_POST['url']) : 'list-'.rand(0,9).'-'.rand(0,99);
 			}
 			if($data=$list->create()){
+				if($num){
+				$info=$this->uploadimg();
+				$data['photo']=$info[0]['savename'];
+				}
 				$data['bid']=$this->getbigid($data['id']);
 				if($list->data($data)->save()){
 					$this->success('修改成功',U('List/index'));
@@ -78,11 +86,9 @@ class ListAction extends CommonAction{
 		}
 	}
 	
-	
 	public function uporder(){
 		$this->getSort('List');
 	}
-	
 	
 	public function dellist(){
 		$id = $this->_get('id', 'intval');

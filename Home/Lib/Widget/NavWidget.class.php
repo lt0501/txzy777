@@ -15,6 +15,10 @@ class NavWidget extends Widget{
 			$nav3=$n->field('id,name,ename,url,pid,type,link,elink')->where('pid=56')->order('sort asc')->select();
 			$data['nav3']=$nav3;//有效中间nav
 
+			$nav4=$n->field('id,title,name,ename,url,pid,type,description,edescription,link,elink,photo')->where('pid=1 and nav=1')->order('sort asc')->select();
+			$data['nav4']=$nav4;//有效八个产品nav
+			
+
 			if($nav2){
 				$snav=$n->field('id,name,ename,url,pid,type,link,elink')->where('pid != 0 and nav=1')->order('sort asc')->select();
 				$data['snav']=$snav;
