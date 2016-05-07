@@ -32,6 +32,7 @@
         <ul class="spinner">
           <strong class="news-center">新闻中心</strong>
           <div class="apple">
+            <span class="showall">show all</span>
           	<{:W('List',array('table'=>'New','bid'=>2,'id'=>2,'lang'=>'c'))}> 
           </div>
         </ul>
@@ -70,11 +71,15 @@
 		}
 		$(function(){
 			setInterval('autoScroll(".apple")',2000);
-
 		})
     function delHtmlTag(str){
      return str.replace(/<[^>]+>/g,"");//去掉所有的html标记
     }
+    $(document).ready(function(){
+      $(".showall").click(function(){
+        $(".apple>ul").slideToggle();
+      });
+    });
 </script>
 
 </body>
