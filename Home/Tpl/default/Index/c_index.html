@@ -12,8 +12,15 @@
 </head>
 <style type="text/css">
 .apple a{display:block; text-decoration:none;}
+.apple{
+  height: 150px;
+}
+.new{
+  width:70%;overflow:hidden; margin:0px auto;
+}
+.new a,.aa a{ width:100%; height:30px; line-height:30px; text-indent:20px; color:#000;}
 
-.apple,.aa{ width:70%; height:30px; overflow:hidden; margin:0px auto; }
+.apple,.aa{ width:70%;height:30px;overflow:hidden; margin:0px auto; }
 .apple a,.aa a{ width:100%; height:30px; line-height:30px; text-indent:20px; color:#000;}
 .aa {word-wrap:break-word;line-height:30px;  color:#000;}
 </style>
@@ -31,7 +38,7 @@
       <div class="col-md-12 newsgundong">
         <ul class="spinner">
           <strong class="news-center">新闻中心</strong>
-          <div class="apple">
+          <div id="change" class="apple">
             <span class="showall">show all</span>
           	<{:W('List',array('table'=>'New','bid'=>2,'id'=>2,'lang'=>'c'))}> 
           </div>
@@ -45,6 +52,7 @@
     <{:W('Naveight',array('lang'=>'c'))}>
 
   </div>
+  
   <!-- 新闻中心和关于我们 -->
   <div id="center">
     <div class="index_product" style="display:none">
@@ -75,11 +83,33 @@
     function delHtmlTag(str){
      return str.replace(/<[^>]+>/g,"");//去掉所有的html标记
     }
+    // $(document).ready(function(){
+    //   $(".showall").click(function(){
+    //     $(".apple>ul").slideToggle();
+    //   });
+    // });
+
     $(document).ready(function(){
-      $(".showall").click(function(){
-        $(".apple>ul").slideToggle();
-      });
-    });
+      // $(".showall").click(function(){
+      //   var obj2 = $("#change");   
+      //   obj2.removeClass("apple aa");
+      // });
+      // $(".showall").click(function(){
+      //   var obj2 = $("#change");   
+      //   obj2.addClass("new");
+      // });
+        $(".showall").click(function(){
+            $("#change").toggle(
+                          function(){ 
+                                    $(this).removeClass("apple aa").addClass('new');
+                                    },
+                          function(){
+                                    $(this).removeClass("new").addClass("apple aa");
+                                    }
+                                )
+                          }
+                      )
+              });
 </script>
 
 </body>
