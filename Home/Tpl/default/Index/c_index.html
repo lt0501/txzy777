@@ -83,33 +83,22 @@
     function delHtmlTag(str){
      return str.replace(/<[^>]+>/g,"");//去掉所有的html标记
     }
-    // $(document).ready(function(){
-    //   $(".showall").click(function(){
-    //     $(".apple>ul").slideToggle();
-    //   });
-    // });
 
     $(document).ready(function(){
-      // $(".showall").click(function(){
-      //   var obj2 = $("#change");   
-      //   obj2.removeClass("apple aa");
-      // });
-      // $(".showall").click(function(){
-      //   var obj2 = $("#change");   
-      //   obj2.addClass("new");
-      // });
-        $(".showall").click(function(){
+       // $(".showall").click(function(){
             $("#change").toggle(
                           function(){ 
-                                    $(this).removeClass("apple aa").addClass('new');
-                                    },
+                            // console.log(1);
+                              $(this).removeClass("apple").addClass('new');
+                          },
                           function(){
-                                    $(this).removeClass("new").addClass("apple aa");
+                            // console.log(2);
+                                    $(this).removeClass("new").addClass("apple");
                                     }
-                                )
+                                );
                           }
                       )
-              });
+            //  });
 </script>
 
 </body>
