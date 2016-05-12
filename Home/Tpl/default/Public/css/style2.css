@@ -302,8 +302,13 @@ ul.clock li.clock_desc{
 .search input[type="submit"]:hover{
 	background:  #006baf;
 }
+.search{
+	color: #fff;
+}
 .left-grid img{
-	width: 100% !important;
+	margin-top: 10px;
+	margin-left: 10px;
+	width: 90% !important;
 }
 ul.bag{
 	padding:0;
@@ -638,7 +643,7 @@ ul.list2 li.list2_right{
 	background: url(../images/img-sprite.png) no-repeat -91px -107px;
 }
 .eight{
-	width: 1300px !important;
+	width: 1235px !important;
 	padding-left: 0px !important;
 }
 span.m_1{
@@ -1019,10 +1024,11 @@ i.paperclip{
 .right-grid {
 	width:65%;
 	float: left;
-	margin-left: 5%;
+	margin-left: 3%;
 }
 .right-grid a{
-	color:#5C4A36;
+	color:#006baf;
+	font-size: 18px;
 }
 .right-grid a:hover{
 	color:#e57777;
@@ -1031,7 +1037,7 @@ i.paperclip{
 .right-grid p{
 	font-size:0.85em;
 	line-height:1.5em;
-	color:#8E7558;
+	color:#000;
 }
 .but{
 	float: right;

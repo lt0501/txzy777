@@ -12,13 +12,14 @@
       <div class="a-top col-md-12 col-md-6 col-lg-6">
       <div class="newleft">
            <div class="left-grid">
-              <h6><{$vo.ename}></h6>
+              <!-- <h6><{$vo.ename}></h6> -->
               <img src="__ROOT__/Uploads/<{$vo.photo}>" class="img-responsive">
            </div>
            <div class="right-grid">
               <h4>
                 <a href="<{:W('Href',array('url'=>$vo['url'],'id'=>$vo['id'],'type'=>'new','lang'=>'c'))}>">
-                <{$vo.etitle|mb_substr=###,0,16,'utf-8'}></a>
+                <!-- <{$vo.etitle|mb_substr=###,0,16,'utf-8'}></a> -->
+                <{$vo.ename|mb_substr=###,0,16,'utf-8'}></a>
             </h4>
               <p><{$vo.edescription|mb_substr=###,0,80,'utf-8'}></p>
            </div>

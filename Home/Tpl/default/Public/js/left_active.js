@@ -1,6 +1,3 @@
-/*蓝科企业网站系统PHP版
-http://www.lankecms.com*/
-
 function left_active(){      
     if(document.getElementById("nav_active"+bid)!=null){
         document.getElementById("nav_active"+bid).className="nav_active";

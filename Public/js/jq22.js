@@ -10,13 +10,11 @@ $(function(){
 	});
 	
 	//设计案例hover效果
-	$('.product-wrap .product li').hover(function(){
-		$(this).css("border-color","#ff6600");
-		$(this).find('p > a').css('color','#ff6600');
-	},function(){
-		$(this).css("border-color","#fafafa");
-		$(this).find('p > a').css('color','#666666');
+	// $('.product-wrap .product li').hover(function(){
+	// 	$(this).css("border-color","#ff6600");
+	// 	$(this).find('p > a').css('color','#ff6600');
+	// },function(){
+	// 	$(this).css("border-color","#fafafa");
+	// 	$(this).find('p > a').css('color','#666666');
+	// });
 	});
-	});
-
-

@@ -86,14 +86,16 @@
 
     $(document).ready(function(){
        // $(".showall").click(function(){
-            $("#change").toggle(
+            $(".showall").toggle(
                           function(){ 
                             // console.log(1);
-                              $(this).removeClass("apple").addClass('new');
+                              $("#change").removeClass("apple").addClass('new');
+                              $(this).addClass('showup');
                           },
                           function(){
                             // console.log(2);
-                                    $(this).removeClass("new").addClass("apple");
+                                    $("#change").removeClass("new").addClass("apple");
+                                    $(this).removeClass('showup');
                                     }
                                 );
                           }

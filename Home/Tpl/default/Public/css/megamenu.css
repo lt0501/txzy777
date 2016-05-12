@@ -102,20 +102,23 @@ skyblue .megapanel img:hover,.skyblue form.contact input[type="text"]:focus,.sky
 	color: #ffffff;
 }
 .skybluebottom li{
-	margin-left: 100px;
+	margin-left: 55px;
 	margin-top: 20px;
 }
 .showall{
 	position: absolute;
-    right: 17px;
-    top: 1px;
-    height: 50px;
+    right: 30px;
+    top: 20px;
+    height: 16px;
     line-height: 0;
     font-size: 0;
-    width: 50px;
+    width: 16px;
     display: inline-block;
     cursor: pointer;
     background-size: 75%;
-    background-image: url('data:image/svg+xml;charset=US-ASCII,<%3Fxml%20version%3D"1.0"%20encoding%3D"utf-8"%3F><svg%20version%3D"1.1"%20baseProfile%3D"tiny"%20id%3D"Layer_1"%20xmlns%3D"http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg"%20xlink%3D"http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink"%20x%3D"0px"%20y%3D"0px"%20width%3D"20px"%20height%3D"20px"%20viewBox%3D"0%200%2020%2020"%20space%3D"preserve"><g%20fill%3D"%230066B3">%20<g%20fill%3D"%230066B3">%20%20<path%20d%3D"M10%2C12.5l-5-5h9.9L10%2C12.5z"%20fill%3D"%230066B3"><%2Fpath>%20<%2Fg><%2Fg><%2Fsvg>');
+    background-image: url('/Public/images/showdown.png');
     background-repeat: no-repeat;
+}
+.showup{
+	background-image: url('/Public/images/showtop.png') !important;
 }

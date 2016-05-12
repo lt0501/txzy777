@@ -85,6 +85,28 @@ class ListAction extends CommonAction{
 			}
 		}
 	}
+
+	//删除商品图片
+	public function delphoto(){
+		$name=$this->_get('name');
+		$id=$this->_get('id','intval');
+		
+		if($name && $id){
+			if(M('List')->where('id='.$id)->setField('photo','')){
+				if(delimg('../Uploads/'.$name)){
+					$this->success('删除成功',U('mod',array('id'=>$id)));
+				}else{
+					$this->error('数据删除成功，但找不到要删除的文件',U('mod',array('id'=>$id)));
+				}
+			}else{
+				$this->error('操作失败');
+			}
+		}else{
+			$this->error('非法操作');
+		}
+	}
+
+
 	
 	public function uporder(){
 		$this->getSort('List');
