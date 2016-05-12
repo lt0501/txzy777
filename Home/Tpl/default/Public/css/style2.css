@@ -1936,6 +1936,23 @@ ul.list li a{
 	.copyright_index {
     	margin-left: 630px;
 	}
+	.megapanel {
+		width: 1904px !important;
+	}
+	.megamenu>li>.megapanel {
+		left: -320px !important;
+		padding: 20px 360px 20px !important;
+
+	}
+	.copyright {
+    margin: 0 auto;
+    font: 12px/28px Arial, Verdana, Helvetica, sans-serif;
+    padding: 16px 0px;
+    margin-left: 610px;
+    line-height: 24px;
+    text-align: center;
+    word-break: break-all;
+	}
 }
 
 @media(max-width:1280px){

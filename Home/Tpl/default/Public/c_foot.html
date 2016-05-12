@@ -17,8 +17,7 @@
       </div>
     </div>
     <div class="copyright <if condition='isset($isindex)'>copyright_index</if>">
-        <p><{$Think.config.web_icp}> <a href="__ROOT__/c_sitemap.html" target="_blank">网站地图</a></p>
-        <p><{$Think.config.web_copyright}></p>
+        <p><{$Think.config.web_icp}> <a href="__ROOT__/c_sitemap.html" target="_blank">网站地图</a> <{$Think.config.web_copyright}></p>
         <p>地址：<{$Think.config.web_add}> &nbsp;电话：<{$Think.config.web_tel}> &nbsp;传真：<{$Think.config.web_fax}>&nbsp;<{$Think.config.web_count}></p>
     </div>
   	<if condition='isset($isindex)'><{:W('Tags',array('lang'=>'c'))}></if>

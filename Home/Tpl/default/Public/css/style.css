@@ -56,7 +56,7 @@ img{border:0;}
 	color: #fff;
 }
 /*广告图*/
-body,ul,li,ol{list-style:none;padding:0px;margin:0px;font-size:12px;}
+body,ul,li,ol{list-style:none;padding:0px;margin:0px;font-size:16px;}
 	img{border:0px;
 }
 			
@@ -300,7 +300,7 @@ li.small_li2_sitemap{float: left; padding-left: 20px;}
     margin-right: auto;
     margin-left: auto;
     height: 82px;
-    line-height: 82px;
+    line-height: 40px;
     background:#fff;
 }
 .diynav ul li a{
@@ -340,6 +340,9 @@ li.small_li2_sitemap{float: left; padding-left: 20px;}
 #diyright{
 	/*padding: 70px 186px 74px 186px;*/
 }
+.diycontent{
+    width: 1080px !important;
+}
 .diytitle{
 	font-weight: normal;
     font-size: 28px;
@@ -348,12 +351,11 @@ li.small_li2_sitemap{float: left; padding-left: 20px;}
 }
 .diycontent{
 	color: #757575;
-	white-space: pre-wrap; /* css-3 */ 
 	white-space: -moz-pre-wrap; /* Mozilla, since 1999 */ 
 	white-space: -pre-wrap; /* Opera 4-6 */ 
 	white-space: -o-pre-wrap; /* Opera 7 */ 
 	word-wrap: break-word; /* Internet Explorer 5.5+ */ 
-	padding-left: 50px;
+	padding-left: 90px;
 }
 .diycontent img{
 	width: 1000px;

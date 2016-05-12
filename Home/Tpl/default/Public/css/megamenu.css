@@ -1,5 +1,5 @@
 .megamenu{margin-bottom:0px;padding:0;width:100%;list-style:none;display:inline-block;position:relative;font-size:15px}
-.megamenu li{margin-bottom:-5px;display:inline;margin-left: -1px;margin-top: 5px;}
+.megamenu li{margin-bottom:-1px;display:inline;margin-left: -1px;margin-top: 5px;}
 .megamenu>li>a{float:left;padding:8px 10px;text-decoration:none;text-transform:capitalize;font-size:14px; -webkit-transition: all 0.3s ease-in-out;text-transform:uppercase;
 	-moz-transition: all 0.3s ease-in-out;
 	-o-transition: all 0.3s ease-in-out;
@@ -23,11 +23,13 @@
 	text-align:left;
 	background:#ffffff;
 	box-shadow: 0px 2px 4px #777; 
-	width:150%;
-	top:40px;
-	left:-315px;
-	padding:20px 353px 20px;
+	top:44px;
+	left:-41px;
+	padding:20px 80px 20px;
 	-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box
+}
+.megapanel {
+	width: 1348px;
 }
 .megamenu .megapanel ul{margin:0;padding:0}
 .megamenu .megapanel img{cursor:pointer;-webkit-transition:border .3s linear;-moz-transition:border .3s linear;-o-transition:border .3s linear;transition:border .3s linear}.megamenu .megapanel img:hover{}.megamenu form.contact input,.megamenu form.contact textarea{font-family:Calibri,Arial;font-size:16px;color:#444;outline:0}
