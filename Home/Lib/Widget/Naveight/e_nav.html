@@ -17,11 +17,11 @@
            </div>
            <div class="right-grid">
               <h4>
-                <a href="<{:W('Href',array('url'=>$vo['url'],'id'=>$vo['id'],'type'=>'new','lang'=>'c'))}>">
+                <a href="<{:W('Listhref',array('url'=>$vo['url'],'id'=>$vo['id'],'link'=>$vo['link'],'lang'=>'e'))}>">
                 <!-- <{$vo.etitle|mb_substr=###,0,16,'utf-8'}></a> -->
                 <{$vo.ename|mb_substr=###,0,16,'utf-8'}></a>
             </h4>
-              <p><{$vo.edescription|mb_substr=###,0,80,'utf-8'}></p>
+              <p><{$vo.edescription|mb_substr=###,0,160,'utf-8'}></p>
            </div>
         </div>
       </div>

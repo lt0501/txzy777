@@ -7,8 +7,8 @@
 #spec-n5{width:312px; height:56px; padding-top:6px; overflow:hidden;}
 #spec-left{ background:url(images/left.gif) no-repeat; width:10px; height:45px; float:left; cursor:pointer; margin-top:3px;}
 #spec-right{background:url(images/right.gif) no-repeat; width:10px; height:45px; float:left;cursor:pointer; margin-top:3px;}
-#spec-list{ width:305px; float:left; overflow:hidden; margin-left:6px; display:inline;}
-#spec-list ul{padding-left:30px; *padding-left:2px;}
+#spec-list{ float:left; overflow:hidden; margin-left:6px; display:inline;}
+#spec-list ul{padding-left:30px; *padding-left:2px;width:280px !important;}
 #spec-list ul li{ float:left; margin-right:0px; display:inline; width:55px;}
 #spec-list ul li img{ padding:2px ; border:1px solid #ccc; width:45px; height:45px;}
 
