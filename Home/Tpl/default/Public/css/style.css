@@ -7,7 +7,7 @@ a:hover {color:#dc1929;}
 a:active {text-decoration: none;color: #727272;}
 img{border:0;}
 
-.img_border{border:solid 1px #ddd;}
+.img_border{border:solid 1px #ddd;margin:25px;}
 .img_border:hover{border:1px solid #b6b6b6;}
 .clear{clear:both;}
 
@@ -161,9 +161,29 @@ ul.contact li{list-style:none; color:#666666; line-height:27px; font-size: 12px;
 
 /*产品列表*/
 .products_list{margin:20px 0px 10px 0px; width: 795px; _width:770px;}
-.products_list li{list-style:none;display:block; height:230px; margin-right:19px; _margin-right:14px; float:left;}
-.products_list p{ text-align:center; width:176px; overflow:hidden; line-height:20px; padding-top:4px;}
+.products_list li{margin-bottom: 36px;;list-style:none;display:block; height:230px;width: 850px; margin-right:19px; _margin-right:14px; float:left;}
+.products_list li:hover {
+	/*border: 1px #000 solid;*/
+	box-shadow: 1px 1px 3px 2px rgba(0,0,0,.13);
+}
+.products_list p{ width:600px; overflow:hidden; line-height:20px; padding-top:4px;font-size: 14px;}
 .products_related_list{margin:10px 0px 0px 0px;}
+.products_list li a{
+	float: left;
+}
+.products_list li h1{
+	margin-top: 24px;
+}
+.products_list li h1 a{
+	font-size: 20px;
+}
+.go{
+    /*position: relative;
+    top: 84px;
+    left: 494px;*/
+    padding-top: 95px;
+    padding-left: 770px;
+}
 
 /*新闻列表*/
 ul.news_list{margin-top:10px;}
@@ -313,7 +333,7 @@ li.small_li2_sitemap{float: left; padding-left: 20px;}
     margin-left: 50px;
 }
 .diyflash{
-	width: 1070px;
+	width: 1188px;
     margin-right: auto;
     margin-left: auto;
 }
@@ -328,17 +348,21 @@ li.small_li2_sitemap{float: left; padding-left: 20px;}
     top: 15px;
     z-index: 1;
 }
+.aboutimg img{
+	width: 1188px;
+}
 #diymain{
-	width: 1187px;
+	width: 1188px;
     margin-right: auto;
     margin-left: auto;
     background: #fff;
 }
 #diycenter{
-	width: 1187px;
+	width: 1188px;
 }
 #diyright{
-	/*padding: 70px 186px 74px 186px;*/
+	padding: 140px;
+	width: 1188px;
 }
 .diycontent{
     width: 1080px !important;
@@ -355,11 +379,11 @@ li.small_li2_sitemap{float: left; padding-left: 20px;}
 	white-space: -pre-wrap; /* Opera 4-6 */ 
 	white-space: -o-pre-wrap; /* Opera 7 */ 
 	word-wrap: break-word; /* Internet Explorer 5.5+ */ 
-	padding-left: 90px;
+	/*padding-left: 90px;*/
 }
 .diycontent img{
-	width: 1000px;
+	width: 1188px;
 }
 .diycontent p{
-	width: 1030px;
+	width: 900px;
 }

@@ -21,7 +21,5 @@ class ListhrefWidget extends Widget{
 			}
 		}		
 	}
-	
-
 }
 ?> 

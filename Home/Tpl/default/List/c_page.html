@@ -16,16 +16,17 @@
     <div class="diyspan">
       您现在的位置：<a href="<{:W('Index',array('cnen'=>'cn','lang'=>'c'))}>">网站首页</a> &gt; <{$list.name}>
     </div>
-   </div>
+  </div>
 
   <div class="diynav">
     <{:W('Navdiy',array('lang'=>'c'))}>
   </div>
 
-  <!-- <div class="diyflash">
-    <div class="diyimg" style="background:url('__ROOT__/Uploads/570df7b0eab5c.jpeg') no-repeat center top">
-    </div>
-  </div> -->
+  <div class="diyflash">
+    <!-- <div class="diyimg" style="background:url('__ROOT__/Uploads/570df7b0eab5c.jpeg') no-repeat center top">
+    </div> -->
+    <{:W('About',array('id'=> $list['id'] ))}>
+  </div>
 
   <div id="diymain">
       <div id="diycenter">

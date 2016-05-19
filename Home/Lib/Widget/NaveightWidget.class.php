@@ -13,7 +13,5 @@ class NaveightWidget extends Widget{
 		$content=$this->renderFile($_template,$data);
 		return $content;
 	}
-
-
 }
 ?>
