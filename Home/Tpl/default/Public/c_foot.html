@@ -1,26 +1,40 @@
 <div id="footer">
-<!-- <if condition="isset($isindex)">
-    <div class="links">
-		友情链接：<{:W('Link',array('lang'=>'c'))}>
+  <div class="container">
+    <!-- <if condition="isset($isindex)">
+        <div class="links">
+    		友情链接：<{:W('Link',array('lang'=>'c'))}>
+        </div>
+    </if> -->
+
+    <div class="skyblueimg">
+      <a href="/index.html"><img src="__ROOT__/Uploads/<{$Think.config.web_logo}>" alt="<{$Think.config.web_name}>"></a>
     </div>
-</if> -->
-  <div class="footerch">
-    <div class="header_bottom">
-      <div class="container">
-      	<div class="header_bottom-box">
-      		<div class="header_bottom_left">
-      			<div class="logobottom">
-      				<{:W('Navbottom',array('lang'=>'c'))}>
-      			</div>
-      		</div>
-      	</div>
+
+    <div class="footerch">
+      <div class="header_bottom">
+        	<div class="header_bottom-box">
+        		<div class="header_bottom_left">
+        			<div class="logobottom">
+        				<{:W('Navbottom',array('lang'=>'c'))}>
+        			</div>
+              <div class="copyright <if condition='isset($isindex)'>copyright_index</if>">
+                  <p><a href="__ROOT__/c_sitemap.html" target="_blank">网站地图</a> <{$Think.config.web_copyright}> 地址：<{$Think.config.web_add}> &nbsp;<br/>电话：<{$Think.config.web_tel}> &nbsp;传真：<{$Think.config.web_fax}>&nbsp;<{$Think.config.web_count}><{$Think.config.web_icp}></p>
+              </div>
+        		</div>
+        	</div>
       </div>
+    	<if condition='isset($isindex)'><{:W('Tags',array('lang'=>'c'))}></if>
     </div>
-    <div class="copyright <if condition='isset($isindex)'>copyright_index</if>">
-        <p><{$Think.config.web_icp}> <a href="__ROOT__/c_sitemap.html" target="_blank">网站地图</a> <{$Think.config.web_copyright}></p>
-        <p>地址：<{$Think.config.web_add}> &nbsp;电话：<{$Think.config.web_tel}> &nbsp;传真：<{$Think.config.web_fax}>&nbsp;<{$Think.config.web_count}></p>
+
+    <div class="info-links">
+        <a rel="nofollow" href="/"><img rel="nofollow" src="/Home/Tpl/default/Public/images/seal.png" alt="隐私认证"></a>
+        <a rel="nofollow" href="/"><img rel="nofollow" src="/Home/Tpl/default/Public/images/v-logo-2.png" alt="诚信网站"></a>
+        <a rel="nofollow" href="/"><img rel="nofollow" src="/Home/Tpl/default/Public/images/v-logo-1.png" alt="可信网站"></a>
     </div>
-  	<if condition='isset($isindex)'><{:W('Tags',array('lang'=>'c'))}></if>
+
+    <div class="slogan">
+      穹宇测控，专为MEMS测控技术而生！
+    </div>
   </div>
 </div>
 <!-- end of footer -->

@@ -1,8 +1,7 @@
-<div class="menubottom">
-  <div class="container">
+<div>
+  <div>
     <div>
-       <ul class="megamenu skybluebottom">
-        <a href="/index.html"><img src="__ROOT__/Uploads/<{$Think.config.web_logo}>" alt="<{$Think.config.web_name}>"></a>
+       <ul class="footer_nav">
         <volist name='nav' id='vo'>
           <li>
             <a id="nav_active<{$vo.id}>" href="<{:W('Listhref',array('url'=>$vo['url'],'id'=>$vo['id'],'link'=>$vo['link'],'lang'=>'c'))}>"><{$vo.name}>

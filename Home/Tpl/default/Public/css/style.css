@@ -86,7 +86,7 @@ body,ul,li,ol{list-style:none;padding:0px;margin:0px;font-size:16px;}
 	font:16px "微软雅黑",Arial;
 }
 #nav_active5{
-	margin-left: 40px;
+	margin-left: 30px;
 }
 
 /*公司简介*/
@@ -103,7 +103,10 @@ body,ul,li,ol{list-style:none;padding:0px;margin:0px;font-size:16px;}
 .index_new li{list-style:none; line-height:2.2em;background-image: url(../images/li.png);background-repeat: no-repeat;background-position: left center; padding-left:14px; padding-right:8px; margin-left:2px;}
 .index_new a{color: #6f6f6f;}
 .index_new a:hover {color:#dc1929;}
-.time{float:right;color:#505050;padding-top: 6px;}
+.time{float:left;color:#505050;padding-top: 6px;}
+.apple a{
+	padding-right: 20px;
+}
 
 /*首页滚动产品*/
 .index_product{clear:both; margin:30px 32px 0px 20px;}
@@ -239,7 +242,7 @@ h1.content_title{font-size:22px; text-align:center; line-height:40px; margin-top
 /*产品展示*/
 .main_photo{float:left; width:310px; margin:15px 3px 0px 0px;}
 .product_group{float:left; width:655px; margin:5px 0px 0px 22px;}
-.product_group h1{color:#000;font-size:15px;text-align:center; line-height:22px; padding:6px 0px 7px 0px;border-bottom:dotted 1px #c9c9c9;}
+.product_group h1{color:#000;font-size:15px;text-align:left; line-height:22px; padding:6px 0px 7px 0px;border-bottom:dotted 1px #c9c9c9;}
 .product_group ul{ margin-top:12px;}
 .product_group li{list-style:none; padding-bottom:6px; line-height:26px; font-size:13px;}
 .product_content{ clear:both; width:770px; overflow:hidden;line-height:26px; font-size:13px; margin-top:16px; padding:8px 0px;}
@@ -287,19 +290,66 @@ li.small_li_sitemap{clear: both;padding-left: 12px;}
 li.small_li2_sitemap{float: left; padding-left: 20px;}
 
 /*底部样式*/
-#footer {margin:0 auto; clear:both; width:100%; border-top:3px solid #006baf/*#dedede*/;color: #6f6f6f; margin-top: 10px;}
+#footer {
+	padding: 30px 0;
+    font-size: 12px;
+    background: #fafafa; 
+	width:100%; 
+	border-top:3px solid #006baf/*#dedede*/;
+}
+.container{
+	
+}
+.skyblueimg{
+	float: left;
+    width: 150px;
+    height: 70px;
+    margin-left: 40px;
+    margin-top: 14px;
+}
+.footerch{
+	float: left;
+}
+.info-links{
+	float: right;
+    height: 28px;
+    margin: 15px 35px 0 0;
+}
+.slogan{
+	clear: both;
+    margin: 30px auto 0;
+   	width: 325px;
+    height: 19px;
+    font-size: 18px;
+    margin-top: 120px;
+}
+.info-links img{
+	width: auto;
+    height: 28px;
+    margin-left: 7px;
+}
+.footer_nav li{
+	float: left;
+}
+
 .links{width:989px; margin:0 auto; padding:10px 5px 0px 5px; font:12px/28px Arial, Verdana, Helvetica, sans-serif;text-align:center;border-bottom:1px solid #dedede; }
 .links a:link,.links a:visited,.links a:active{font:12px/28px Arial, Verdana, Helvetica, sans-serif; color: #6f6f6f;}
-.links a:hover {color:#dc1929;}
+.links a:hover {color:#006baf;}
 .footerch{
-	width: 1290px;
-	/*margin-left: 30px;*/
+	width: 700px;
 }
-.copyright{ margin:0 auto;font:12px/28px Arial, Verdana, Helvetica, sans-serif; padding:16px 0px;margin-left: 55px; line-height:24px; text-align:center; word-break:break-all;}
+.copyright{ 
+	margin:0 auto;
+	font:12px/28px Arial, Verdana, Helvetica, sans-serif; 
+	line-height:24px; 
+	word-break:break-all;
+	float: left;
+}
 .copyright a{color: #6f6f6f;}
-.copyright a:hover {color:#dc1929;}
+.copyright a:hover {color:#006baf;}
 .copyright_index{
-	margin-left: 55px;
+	float: left;
+	margin-left: 5px;
 }
 
 /*关于我们七个页面样式*/

@@ -14,6 +14,12 @@ body a{
 	-ms-transition: 0.5s all;
 	-moz-transition: 0.5s all;*/
 }
+
+/*a:link {color: #000}
+a:visited {color: #006baf}
+a:hover {color: #006baf}
+a:active {color: #006baf}*/
+
 .header_top{
 	/*background:#BFE4EF;*/
 	/*border-bottom: 1px solid #dfe1e3;*/
@@ -51,6 +57,10 @@ body a{
 	color: #006baf;
 	text-decoration:none;
 }
+.cssmenu li> a:link {
+	color: #000;
+}
+
 /* PREFIXED CSS */
 .dropdown,
 .dropdown div,
@@ -236,8 +246,7 @@ body a{
 	padding:0 15px;
 }
 .header_bottom_left{
-	width:20%;
-	float:left;
+	float: left;
 }
 .logo{
 	width:25%;
@@ -272,28 +281,28 @@ ul.clock li.clock_desc{
 }
 .header_bottom_right{
 	padding-top: 5px;
-	width:25%;
+	width:22%;
 	float:right;
 }
 .search{
 	float: right;
 	width:100%;
-	margin-right: 32%;
+	margin-right: 23%;
 }
 .search input[type="text"] {
-	padding:15px;
+	padding:10px;
 	outline: none;
 	color:#B6B2AE;
 	background:#fff;
 	border:1px solid #3498db;
-	width:95%;
+	width:90%;
 	line-height: 1.5em;
 	font: 500 13px/13px 'Raleway', sans-serif;
 	-webkit-appearance: none;
 }
 .search input[type="submit"] {
 	background: 24px 10px #006baf;
-	padding: 13.5px 38px;
+	padding: 8.5px 25px;
 	border: none;
 	cursor: pointer;
 	position: absolute;
@@ -1133,16 +1142,18 @@ ul.footer_nav{
 }
 ul.footer_nav li{
 	display:inline-block;
+	border-right: 1px solid #000;
+	padding-left: 5px;
 }
 ul.footer_nav li a{
-	color:#886C58;
+	color:#000;
 	font-size:0.8125em;
-	margin:0 10px;
+	margin:0 10px 0 0;
 	font-weight:500;
 }
 ul.footer_nav li a:hover{
 	text-decoration:none;
-	color: #ee4a02;
+	color: #006baf;
 }
 p.copy{
 	color:#886C58;

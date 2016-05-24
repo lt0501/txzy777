@@ -60,8 +60,7 @@ skyblue .megapanel img:hover,.skyblue form.contact input[type="text"]:focus,.sky
 /* start megamenu colors */
 
 #nav_active5{
-	background: #006baf;
-    color: #fff;
+    color: #000;
 }
 .skyblue li a.color1:hover{
 	background:#EF5F21;
@@ -72,8 +71,7 @@ skyblue .megapanel img:hover,.skyblue form.contact input[type="text"]:focus,.sky
 	color: #ffffff;
 }
 .skyblue li a.color3:hover{
-	background:#006baf;
-	color: #ffffff;
+	color: #006baf !important;
 }
 .skyblue li a.color4:hover{
 	background:#006baf;
@@ -104,8 +102,7 @@ skyblue .megapanel img:hover,.skyblue form.contact input[type="text"]:focus,.sky
 	color: #ffffff;
 }
 .skybluebottom li{
-	margin-left: 55px;
-	margin-top: 20px;
+	
 }
 .showall{
 	position: absolute;
