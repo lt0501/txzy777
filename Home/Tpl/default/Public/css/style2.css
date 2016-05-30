@@ -358,6 +358,12 @@ ul.bag li.bag_right p{
 	margin-top: 15px;
 	color: #3498db;
 }
+.menubottom ul li a:hover{
+	color: #000 !important;
+}
+/*.menubottom ul li a:visited{
+	color: #006baf !important;
+}*/
 .h_nav ul li a {
 	z-index: 99999999;
 	display: block;
@@ -1959,7 +1965,7 @@ ul.list li a{
     margin: 0 auto;
     font: 12px/28px Arial, Verdana, Helvetica, sans-serif;
     padding: 16px 0px;
-    margin-left: 610px;
+    /*margin-left: 610px;*/
     line-height: 24px;
     text-align: center;
     word-break: break-all;

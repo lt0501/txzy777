@@ -34,7 +34,7 @@
   <div class="tablelisthead">
     <ul pid='0'>
       <li class="li_10">编号</li>
-      <li class="li_40">标题</li>
+      <li class="li_40">简要说明</li>
       <li class="li_30">日期</li>
       <li class="li_20">编辑</li>
     </ul>
@@ -45,7 +45,7 @@
     <volist name='feed' id='vo'>
       <ul onmouseover="this.style.background ='#FFFDD7'" onmouseout="this.style.background ='#FFFFFF'">
           <li class="li_10"><{$vo.id}></li>
-          <li class="li_40"><{$vo.title}></li>
+          <li class="li_40"><{$vo.explanation}></li>
           <li class="li_30"><{$vo.time|date="Y-m-d H:i:s",###}></li>
           <li class="li_20">
             <a href="<{:U('view',array('id'=>$vo['id']))}>" >查看</a> | 

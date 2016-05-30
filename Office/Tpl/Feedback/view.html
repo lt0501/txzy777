@@ -33,8 +33,76 @@
 		<tr><td style="border:none;">
 				<table width="100%" border="0" cellspacing="0" cellpadding="0" class="Font">
 		<tr class="firstalt">
-			<td width="20%" height="25"><span style="padding-left:10px;">标题：</span></td>
-			<td><{$feed.title}></td>
+			<td width="20%" height="25"><span style="padding-left:10px;">简要说明：</span></td>
+			<td><{$feed.explanation}></td>
+		</tr>
+		<tr class="firstalt">
+			<td width="20%" height="25"><span style="padding-left:10px;">精度要求：</span></td>
+			<td><{$feed.accuracy}></td>
+		</tr>
+		<tr class="firstalt">
+			<td width="20%" height="25"><span style="padding-left:10px;">分辨率：</span></td>
+			<td><{$feed.resolution}></td>
+		</tr>
+		<tr class="firstalt">
+			<td width="20%" height="25"><span style="padding-left:10px;">响应频率：</span></td>
+			<td><{$feed.frequency}></td>
+		</tr>
+		<tr class="firstalt">
+			<td width="20%" height="25"><span style="padding-left:10px;">测量范围：</span></td>
+			<td><{$feed.measuring}></td>
+		</tr>
+		<tr class="firstalt">
+			<td width="20%" height="25"><span style="padding-left:10px;">输出接口：</span></td>
+			<td><{$feed.export}></td>
+		</tr>
+		<tr class="firstalt">
+			<td width="20%" height="25"><span style="padding-left:10px;">启动延迟：</span></td>
+			<td><{$feed.delay}></td>
+		</tr>
+		<tr class="firstalt">
+			<td width="20%" height="25"><span style="padding-left:10px;">产品协议：</span></td>
+			<td><{$feed.product}></td>
+		</tr>
+		<tr class="firstalt">
+			<td width="20%" height="25"><span style="padding-left:10px;">防护等级：</span></td>
+			<td><{$feed.protect}></td>
+		</tr>
+		<tr class="firstalt">
+			<td width="20%" height="25"><span style="padding-left:10px;">电磁兼容性：</span></td>
+			<td><{$feed.electromagnetic}></td>
+		</tr>
+		<tr class="firstalt">
+			<td width="20%" height="25"><span style="padding-left:10px;">工作温度：</span></td>
+			<td><{$feed.temperature}></td>
+		</tr>
+		<tr class="firstalt">
+			<td width="20%" height="25"><span style="padding-left:10px;">存储温度：</span></td>
+			<td><{$feed.earthquake}></td>
+		</tr>
+		<tr class="firstalt">
+			<td width="20%" height="25"><span style="padding-left:10px;">抗振性能：</span></td>
+			<td><{$feed.volume}></td>
+		</tr>
+		<tr class="firstalt">
+			<td width="20%" height="25"><span style="padding-left:10px;">长：</span></td>
+			<td><{$feed.length}></td>
+		</tr>
+		<tr class="firstalt">
+			<td width="20%" height="25"><span style="padding-left:10px;">宽：</span></td>
+			<td><{$feed.width}></td>
+		</tr>
+		<tr class="firstalt">
+			<td width="20%" height="25"><span style="padding-left:10px;">高：</span></td>
+			<td><{$feed.height}></td>
+		</tr>
+		<tr class="firstalt">
+			<td width="20%" height="25"><span style="padding-left:10px;">重量：</span></td>
+			<td><{$feed.weight}></td>
+		</tr>
+		<tr class="firstalt">
+			<td width="20%" height="25"><span style="padding-left:10px;">其他要求：</span></td>
+			<td><{$feed.others}></td>
 		</tr>
 		<tr class="secondalt">
 			<td height="25"><span style="padding-left:10px;">联系人：</span></td>
@@ -53,13 +121,9 @@
 		<tr class="firstalt">
 			<td height="25"><span style="padding-left:10px;">地址：</span></td>
 			<td><{$feed.add}></td>
-		</tr>		
-		<tr class="secondalt">
-			<td height="25" width="20%"><span style="padding-left:10px;">留言内容：</span></td>
-			<td><{$feed.contents}></td>
 		</tr>
 		<tr class="firstalt">
-			<td height="25"><span style="padding-left:10px;">留言时间</span></td>
+			<td height="25"><span style="padding-left:10px;">提交时间：</span></td>
 			<td><{$feed.time|date="Y-m-d H:i:s",###}></td>
 		</tr>								
 	</table>

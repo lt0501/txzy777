@@ -22,7 +22,7 @@
 #cmsFloatPanel .servicePanel .servicePanel-inner .arrowPanel .arrow02{border-left:10px solid #d7eefe;}
 #cmsFloatPanel .servicePanel .servicePanel-inner .serviceMsgPanel{width:110px;position:absolute;left:0;top:0;overflow:hidden;}
 #cmsFloatPanel .servicePanel .servicePanel-inner .serviceMsgPanel .serviceMsgPanel-hd{width:110px;height:60px;background:url(../images/kf-top.jpg) no-repeat left top;overflow:hidden;}
-#cmsFloatPanel .servicePanel .servicePanel-inner .serviceMsgPanel .serviceMsgPanel-hd a{width:24px;height:24px;font-size:12px;color:#fff;line-height:24px;display:block;float:right;}
+#cmsFloatPanel .servicePanel .servicePanel-inner .serviceMsgPanel .serviceMsgPanel-hd a{width:300px;height:300px;font-size:12px;color:#fff;line-height:24px;display:block;float:right;}
 #cmsFloatPanel .servicePanel .servicePanel-inner .serviceMsgPanel .serviceMsgPanel-hd a span{display:none;}
 #cmsFloatPanel .servicePanel .servicePanel-inner .serviceMsgPanel .serviceMsgPanel-bd{width:110px;background:url(../images/kf-middle.gif) repeat-y left top;overflow:hidden;}
 #cmsFloatPanel .servicePanel .servicePanel-inner .serviceMsgPanel .serviceMsgPanel-bd .msggroup{width:90px;margin:0 15px; padding:4px 0px 4px 0px;}

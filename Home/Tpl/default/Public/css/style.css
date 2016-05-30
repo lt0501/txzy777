@@ -169,7 +169,7 @@ ul.contact li{list-style:none; color:#666666; line-height:27px; font-size: 12px;
 	/*border: 1px #000 solid;*/
 	box-shadow: 1px 1px 3px 2px rgba(0,0,0,.13);
 }
-.products_list p{ width:600px; overflow:hidden; line-height:20px; padding-top:4px;font-size: 14px;}
+.products_list p{ width:600px; overflow:hidden; line-height:20px; padding-top:4px;font-size: 13px;}
 .products_related_list{margin:10px 0px 0px 0px;}
 .products_list li a{
 	float: left;
@@ -179,6 +179,10 @@ ul.contact li{list-style:none; color:#666666; line-height:27px; font-size: 12px;
 }
 .products_list li h1 a{
 	font-size: 20px;
+	font-family: bold;
+}
+#orderform{
+	margin-top: 20px;
 }
 .go{
     /*position: relative;
@@ -274,14 +278,34 @@ ul.related_newlist{ margin-top:0px;}
 
 /*订单留言*/
 dl.table{margin:40px 0px 20px 40px;}
-dl.table dt{float:left; width:110px; height:40px; text-align:right;line-height:23px;}
+dl.table dt{float:left; width:230px; height:40px; text-align:right;line-height:23px;}
 dl.table dd{float:left; width:600px; height:40px; line-height:20px;}
-.textwidth{width:300px; height: 22px;}
+.textwidth{width:260px; height: 22px;}
 dl.table dd.biezhu{height:130px;}
 dl.table dd.biezhu textarea{height:115px;width:330px;}
 .codeimg{background-color: #000; margin: 0px 0px -6px 5px;}
 input.submit_btn{color:#2D629A;background:#FFFFFF url(../images/btn_bg.gif) repeat-x;border:1px solid #AABAC3;padding-top:3px;padding-bottom:2px;font-size:13px; font-weight:bold;width:70px;cursor:pointer!important;cursor:hand;overflow:hidden;height:25px; margin-right: 5px;}
-
+#myform dt{
+	float: left;
+}
+#myform dd{
+	margin-top: 20px;
+}
+#myform dt{
+	margin-top: 20px;
+}
+.tableB{
+	padding-top: 10px;
+}
+.tableC{
+	padding-top: 10px;
+}
+.tableE{
+	padding-top: 10px;
+}
+.tableA dt{
+	float: none !important;
+}
 /*网站地图*/
 .ul_sitemap{margin: 10px 0px 30px 30px;}
 .ul_sitemap li{list-style: none; line-height: 26px;clear: both;}
@@ -345,7 +369,7 @@ li.small_li2_sitemap{float: left; padding-left: 20px;}
 	word-break:break-all;
 	float: left;
 }
-.copyright a{color: #6f6f6f;}
+.copyright a{color: #000;}
 .copyright a:hover {color:#006baf;}
 .copyright_index{
 	float: left;
@@ -380,7 +404,7 @@ li.small_li2_sitemap{float: left; padding-left: 20px;}
     text-align: center;
     display: inline-block;
     height: 82px;
-    margin-left: 50px;
+    margin-left: 40px;
 }
 .diyflash{
 	width: 1188px;
@@ -411,7 +435,7 @@ li.small_li2_sitemap{float: left; padding-left: 20px;}
 	width: 1188px;
 }
 #diyright{
-	padding: 140px;
+	/*padding: 140px;*/
 	width: 1188px;
 }
 .diycontent{

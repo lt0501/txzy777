@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>在线留言-<{$Think.config.seo_title}></title>
+<title>穹宇测控客户需求选型表-<{$Think.config.seo_title}></title>
 <meta name="keywords" content="<{$Think.config.seo_keywords}>" />
 <meta name="description" content="<{$Think.config.seo_description}>" />
 <script language="javascript">var catid="",pid="",bid=30;</script>
@@ -11,11 +11,6 @@
 <SCRIPT language=javaScript>
 function CheckJob()
 {
-  if (document.myform.title.value.length==""){
-    alert ("留言标题不能为空！");
-    document.myform.title.focus();
-    return false;
-  }
   if (document.myform.name.value.length==""){
     alert ("姓名不能为空！");
     document.myform.name.focus();
@@ -41,20 +36,78 @@ function CheckJob()
       <div id="left" class="leftbg">
           <div class="category_title"></div>
           <ul class="category" id="left_cat">
-             <li><a id="cat_active" href="__SELF__">在线留言</a></li>
+             <li><a id="cat_active" href="__SELF__">穹宇测控客户需求选型表</a></li>
           </ul> 
           <include file='Public:c_contact'/>
       </div>
       <!-- end of left -->
         
         <div id="right">
-          <div class="path_title"><span class="span_left">在线留言 <b>Feedback</b></span><span class="span_right">您现在的位置：<a href="<{:W('Index',array('cnen'=>'cn','lang'=>'c'))}>">网站首页</a> &gt; 在线留言</span></div>
+          <div class="path_title"><span class="span_left">穹宇测控客户需求选型表 <b>Feedback</b></span><span class="span_right">您现在的位置：<a href="<{:W('Index',array('cnen'=>'cn','lang'=>'c'))}>">网站首页</a> &gt; 选型表</span></div>
           
           <form id="myform" name="myform" method="post" action="__ROOT__/?m=Feedback&a=check&g=c" onSubmit="return CheckJob()">
-          <dl class="table">
-              <dt>留言标题：</dt>
-              <dd><input name="title" type="text" class="textwidth"/> <span style="color:#F00; font-size:15px;"> * </span></dd>
-              <dt>您的姓名：</dt>
+          <!-- tableA -->
+          <h2 style="background-color: #99CCFF;text-align: center;">穹宇测控客户需求选型表</h2>
+          <dl class="tableA">
+              <dt>定制需求简要说明：</dt>
+              <dd>
+                <textarea name="explanation" rows="5" cols="120" value="">（定制产品将应用在什么设备上？ 需要解决什么问题？）</textarea>
+              </dd>
+          </dl>
+          <!-- tableB -->
+          <h3 style="background-color: #99CCFF;text-align: left;">技术要求：</h3>
+          <dl class="tableB">
+              <dt>精度要求：</dt>
+              <dd><input name="accuracy" type="text" value="" class="textwidth"/></dd>
+              <dt>分&nbsp;辨&nbsp;率&nbsp;：</dt>
+              <dd><input name="resolution" type="text" value="" class="textwidth"/></dd>
+              <dt>响应频率：</dt>
+              <dd><input name="frequency" type="text" value="" class="textwidth"/></dd>
+              <dt>测量范围：</dt>
+              <dd><input name="measuring" type="text" value="" class="textwidth"/></dd>
+              <dt>输出接口：</dt>
+              <dd><input name="export" type="text" value="" class="textwidth"/></dd>
+              <dt>启动延迟：</dt>
+              <dd><input name="delay" type="text" value="" class="textwidth"/></dd>
+              <dt>产品协议：</dt>
+              <dd><input name="product" type="text" value="" class="textwidth"/></dd>
+              <dt>防护等级：</dt>
+              <dd><input name="protect" type="text" value="" class="textwidth"/></dd>
+              <dt>电磁兼容性：</dt>
+              <dd><input name="electromagnetic" type="text" value="" class="textwidth"/></dd>
+              <dt>工作温度：</dt>
+              <dd><input name="temperature" type="text" value="" class="textwidth"/></dd>
+              <dt>存储温度：</dt>
+              <dd><input name="earthquake" type="text" value="" class="textwidth"/></dd>
+              <dt>抗振性能：</dt>
+              <dd><input name="volume" type="text" value="" class="textwidth"/></dd>
+          </dl>
+          <!-- tableC -->
+          <h3 style="background-color: #99CCFF;text-align:left;">物理要求：</h3>
+          <dl class="tableC">
+            <dt>体积要求：</dt>
+            <dd>长<input name="length" type="text" class="textwidth"/>mm
+            宽<input name="width" type="text" class="textwidth"/>mm
+            高<input name="height" type="text" class="textwidth"/>mm</dd>
+            <dt>重量要求：</dt>
+            <dd><input name="weight" type="text" class="textwidth"/>g</dd>
+          </dl>
+          <!-- tableD -->
+          <h3 style="background-color: #99CCFF;text-align:left;">其他要求</h3>
+          <dl class="tableD">
+              <dt></dt>
+              <dd>
+                <textarea name="others" rows="5" cols="120"></textarea>
+              </dd>注：如有其它要求，请在此说明！
+          </dl>
+          <!-- tableE -->
+          <h3 style="background-color: #99CCFF;text-align:left;">联系方式：</h3>
+          <dl class="tableE">
+              <!-- <dt>留言标题：</dt>
+              <dd><input name="title" type="text" class="textwidth"/> <span style="color:#F00; font-size:15px;"> * </span></dd> -->
+              <dt>公司名称：</dt>
+              <dd><input name="company" type="text" class="textwidth"/></dd>
+              <dt>联&nbsp;系&nbsp;人&nbsp;：</dt>
               <dd><input name="name" type="text" class="textwidth"/> <span style="color:#F00; font-size:15px;"> * </span></dd>
               <dt>联系电话：</dt>
               <dd><input name="tel" type="text" class="textwidth"/> <span style="color:#F00; font-size:15px;"> * </span></dd>
@@ -62,15 +115,16 @@ function CheckJob()
               <dd><input name="email" type="text" class="textwidth"/></dd>
               <dt>联系地址：</dt>
               <dd><input name="add" type="text" class="textwidth"/></dd>
-              <dt>留言内容：</dt>
-              <dd class="biezhu"><textarea name="contents" class="areawidth"></textarea></dd>
+              <!-- <dt>留言内容：</dt>
+              <dd class="biezhu"><textarea name="contents" class="areawidth"></textarea></dd> -->
               <dt>验证码：</dt>
               <dd><input name="code" style="width:50px;"><img class="codeimg" src="<{:U('Common/verify')}>" onclick='this.src=this.src+"?"+Math.random()'/></dd>
               <dt></dt>
-              <dd><input type="submit" name="button" value="提交留言" class="submit_btn"/>
+          </dl>
+
+          <dd><input type="submit" name="button" value="提交留言" class="submit_btn"/>
               <input name="reset" type="reset"  class="submit_btn" value="重置" /></dd>
               <div class="clear"></div>
-          </dl>
           </form>
             
         </div>

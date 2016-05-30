@@ -7,13 +7,13 @@ class FeedbackAction extends CommonAction{
 		$page=new Page($count,20);
 		$this->show=$page->show();
 	
-		$this->feed=$db->field('id,title,time')->order('time desc')->limit($page->firstRow.','.$page->listRows)->select();
-		$this->display();
+		$this->feed=$db->field('id,explanation,time')->order('time desc')->limit($page->firstRow.','.$page->listRows)->select();
+		$this->display('');
 	}
 	
 	public function view(){
 		$id=$this->_get('id','intval');
-		$this->feed=M('Feedback')->field('id,title,name,tel,email,add,contents,time')->find($id);
+		$this->feed=M('Feedback')->find($id);
 		$this->display();
 	}
 	

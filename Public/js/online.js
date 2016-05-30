@@ -1,6 +1,9 @@
 
     $(function(){
 
+    	
+    	
+
         // 客服浮动面板
       if($("#cmsFloatPanel")){
 	  $("#cmsFloatPanel > .ctrolPanel > a.arrow").eq(0).click(function(){$("html,body").animate({scrollTop :0}, 800);return false;});
@@ -12,7 +15,7 @@
 	  var w_m = objMessagePanel.outerWidth();
 	  var w_q = objQrcodePanel.outerWidth();
 	  $("#cmsFloatPanel .ctrolPanel > a.service").bind({
-		  click : function(){return false;},
+		  mouseout : function(){return false;},
 		  mouseover : function(){
 			  objMessagePanel.stop().hide();objQrcodePanel.stop().hide();
 			  if(objServicePanel.css("display") == "none"){
@@ -23,7 +26,7 @@
 		  }
 	  });
 	  $(".servicePanel-inner > .serviceMsgPanel > .serviceMsgPanel-hd > a",objServicePanel).bind({
-		  click : function(){
+		  mouseout : function(){
 			  objServicePanel.animate({"width" : "0px"},600,function(){
 				objServicePanel.hide();  
 			  });
@@ -31,7 +34,7 @@
 		  }
 	  });
 	  $("#cmsFloatPanel > .ctrolPanel > a.message").bind({
-		  click : function(){return false;},
+		  mouseout : function(){return false;},
 		  mouseover : function(){
 			  objServicePanel.stop().hide();objQrcodePanel.stop().hide();
 			  if(objMessagePanel.css("display") == "none"){
@@ -42,7 +45,7 @@
 		  }
 	  });
 	  $(".messagePanel-inner > .formPanel > .formPanel-hd > a",objMessagePanel).bind({
-		  click : function(){
+		  mouseout : function(){
 			  objMessagePanel.animate({"width" : "0px"},600,function(){
 				objMessagePanel.stop().hide();  
 			  });
@@ -50,7 +53,7 @@
 		  }
 	  });
 	  $("#cmsFloatPanel > .ctrolPanel > a.qrcode").bind({
-		  click : function(){return false;},
+		  mouseout : function(){return false;},
 		  mouseover : function(){
 			  objServicePanel.stop().hide();objMessagePanel.stop().hide();
 			  if(objQrcodePanel.css("display") == "none"){
@@ -61,7 +64,7 @@
 		  }
 	  });
 	  $(".qrcodePanel-inner > .codePanel > .codePanel-hd > a",objQrcodePanel).bind({
-		  click : function(){
+		  mouseout : function(){
 			  objQrcodePanel.animate({"width" : "0px"},600,function(){
 				objQrcodePanel.stop().hide();  
 			  });
@@ -70,5 +73,5 @@
 	  });
 	  
         }
-        
+
     });
