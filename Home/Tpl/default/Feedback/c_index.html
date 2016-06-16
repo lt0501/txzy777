@@ -21,6 +21,11 @@ function CheckJob()
     document.myform.tel.focus();
     return false;
   }
+  if (document.myform.email.value.length==""){
+    alert ("邮箱不能为空！");
+    document.myform.tel.focus();
+    return false;
+  }
  }
 </SCRIPT>
 </head>
@@ -56,7 +61,7 @@ function CheckJob()
           </dl>
           <!-- tableB -->
           <h3 style="background-color: #99CCFF;text-align: left;">技术要求：</h3>
-          <dl class="tableB">
+          <dl class="tableB" style="float:left; width: 400px;">
               <dt>精度要求：</dt>
               <dd><input name="accuracy" type="text" value="" class="textwidth"/></dd>
               <dt>分&nbsp;辨&nbsp;率&nbsp;：</dt>
@@ -69,11 +74,13 @@ function CheckJob()
               <dd><input name="export" type="text" value="" class="textwidth"/></dd>
               <dt>启动延迟：</dt>
               <dd><input name="delay" type="text" value="" class="textwidth"/></dd>
+            </dl>
+            <dl class="tableB">
               <dt>产品协议：</dt>
               <dd><input name="product" type="text" value="" class="textwidth"/></dd>
               <dt>防护等级：</dt>
               <dd><input name="protect" type="text" value="" class="textwidth"/></dd>
-              <dt>电磁兼容性：</dt>
+              <dt>电磁兼容：</dt>
               <dd><input name="electromagnetic" type="text" value="" class="textwidth"/></dd>
               <dt>工作温度：</dt>
               <dd><input name="temperature" type="text" value="" class="textwidth"/></dd>
@@ -81,6 +88,7 @@ function CheckJob()
               <dd><input name="earthquake" type="text" value="" class="textwidth"/></dd>
               <dt>抗振性能：</dt>
               <dd><input name="volume" type="text" value="" class="textwidth"/></dd>
+            </dl>
           </dl>
           <!-- tableC -->
           <h3 style="background-color: #99CCFF;text-align:left;">物理要求：</h3>
@@ -102,27 +110,30 @@ function CheckJob()
           </dl>
           <!-- tableE -->
           <h3 style="background-color: #99CCFF;text-align:left;">联系方式：</h3>
-          <dl class="tableE">
+          <dl class="tableE" style="float:left; width: 400px;">
               <!-- <dt>留言标题：</dt>
               <dd><input name="title" type="text" class="textwidth"/> <span style="color:#F00; font-size:15px;"> * </span></dd> -->
               <dt>公司名称：</dt>
               <dd><input name="company" type="text" class="textwidth"/></dd>
               <dt>联&nbsp;系&nbsp;人&nbsp;：</dt>
               <dd><input name="name" type="text" class="textwidth"/> <span style="color:#F00; font-size:15px;"> * </span></dd>
+            </dl>
+            <dl class="tableE">
               <dt>联系电话：</dt>
               <dd><input name="tel" type="text" class="textwidth"/> <span style="color:#F00; font-size:15px;"> * </span></dd>
               <dt>电子邮箱：</dt>
-              <dd><input name="email" type="text" class="textwidth"/></dd>
-              <dt>联系地址：</dt>
-              <dd><input name="add" type="text" class="textwidth"/></dd>
+              <dd><input name="email" type="text" class="textwidth"/><span style="color:#F00; font-size:15px;"> * </span></dd>
+              <!-- <dt>联系地址：</dt>
+              <dd><input name="add" type="text" class="textwidth"/></dd> -->
               <!-- <dt>留言内容：</dt>
               <dd class="biezhu"><textarea name="contents" class="areawidth"></textarea></dd> -->
+            </dl>
               <dt>验证码：</dt>
-              <dd><input name="code" style="width:50px;"><img class="codeimg" src="<{:U('Common/verify')}>" onclick='this.src=this.src+"?"+Math.random()'/></dd>
+              <dd style="margin-top: 35px;"><input name="code" style="width:50px;"><img class="codeimg" src="<{:U('Common/verify')}>" onclick='this.src=this.src+"?"+Math.random()'/></dd>
               <dt></dt>
           </dl>
-
-          <dd><input type="submit" name="button" value="提交留言" class="submit_btn"/>
+          <dd style="margin-top: 30px;">
+          <input type="submit" name="button" value="提交留言" class="submit_btn"/>
               <input name="reset" type="reset"  class="submit_btn" value="重置" /></dd>
               <div class="clear"></div>
           </form>

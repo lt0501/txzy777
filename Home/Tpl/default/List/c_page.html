@@ -42,5 +42,16 @@
 </div>
 <include file='Public:c_foot'/>
 
+  <script type=text/javascript>
+     function g(x)
+    {
+     d=document.getElementsByTagName('a')
+      for(p=d.length;p--;){
+      if(d[p].id!=x){d[p].style.backgroundColor=''/*其他*/}
+      else{d[p].style.backgroundColor='blue'/*点击的*/}
+      }
+    }
+  </script>
+
 </body>
 </html>

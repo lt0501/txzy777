@@ -32,7 +32,7 @@
           <ul class="products_list">
           <volist name='article' id='vo'>   
             <li>
-              <a href="<{:W('Href',array('url'=>$vo['url'],'id'=>$vo['id'],'type'=>$table,'lang'=>'c'))}>" target="_blank"><img name="picautozoom" class="img_border" src="__ROOT__/Uploads/<{$vo.thumb}>" width="176" height="176" alt="<{$vo.name|}>"/></a>
+              <a href="<{:W('Href',array('url'=>$vo['url'],'id'=>$vo['id'],'type'=>$table,'lang'=>'c'))}>" target="_blank"><img name="picautozoom" class="img_border" src="__ROOT__/Uploads/<{$vo.thumb}>" width="180" height="180" alt="<{$vo.name|}>"/></a>
               <h1><a href="<{:W('Href',array('url'=>$vo['url'],'id'=>$vo['id'],'type'=>$table,'lang'=>'c'))}>" title="<{$vo.name|}>" target="_blank"><{$vo.name|mb_substr=###,0,28,'utf-8'}></a></h1>
               <p><{$vo.description|mb_substr=###,0,200,'utf-8'}></p>
               <div class="go">

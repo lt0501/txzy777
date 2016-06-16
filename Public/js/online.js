@@ -1,9 +1,6 @@
 
     $(function(){
 
-    	
-    	
-
         // 客服浮动面板
       if($("#cmsFloatPanel")){
 	  $("#cmsFloatPanel > .ctrolPanel > a.arrow").eq(0).click(function(){$("html,body").animate({scrollTop :0}, 800);return false;});

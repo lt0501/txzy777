@@ -118,7 +118,7 @@
 
   <tr>
     <td>SEO描述：</td>
-    <td height="110"><textarea name="description" class="FormSmall" style="width: 450px; height: 80px;"><{$product.description}></textarea>
+    <td height="110"><textarea name="description" id="SendTextArea" class="FormSmall" style="width: 450px; height: 80px;"><{$product.description}></textarea>
     </td>
   </tr>
 
@@ -310,6 +310,10 @@ function settingselect(id){
   document.getElementById('setting'+id).className="Move";
   document.getElementById('settingBox'+id).className="";
 }
+//换行转回车
+ var haha=document.getElementById("SendTextArea").value;
+ haha=haha.replace('<br />','/n');
+ document.getElementById("SendTextArea").value=haha;
 
 </SCRIPT>
 </body>

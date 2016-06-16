@@ -15,10 +15,17 @@
         	<div class="header_bottom-box">
         		<div class="header_bottom_left">
         			<div class="logobottom">
-        				<{:W('Navbottom',array('lang'=>'c'))}>
+        				<!-- <{:W('Navbottom',array('lang'=>'c'))}> -->
+                <ul class="footer_nav">
+                  <li>
+                    <a href="/cn/-service-support.html">服务支持</a><span>|</span>
+                    <a href="/cn/-Company-Profile.html">关于我们</a><span>|</span>
+                    <a href="/cn/joinus.html">加入我们</a>
+                  </li>
+                </ul>
         			</div>
               <div class="copyright <if condition='isset($isindex)'>copyright_index</if>">
-                  <p><a href="__ROOT__/c_sitemap.html" target="_blank">网站地图</a> <{$Think.config.web_copyright}> 地址：<{$Think.config.web_add}> &nbsp;<br/>电话：<{$Think.config.web_tel}> &nbsp;传真：<{$Think.config.web_fax}>&nbsp;<{$Think.config.web_count}><{$Think.config.web_icp}></p>
+                  <p><!-- <a href="__ROOT__/c_sitemap.html" target="_blank">网站地图</a> --> <{$Think.config.web_copyright}>&nbsp;&nbsp;地址：<{$Think.config.web_add}> &nbsp;<br/>电话：<{$Think.config.web_tel}> &nbsp;&nbsp;Email：<{$Think.config.web_fax}>&nbsp;&nbsp;<{$Think.config.web_count}><{$Think.config.web_icp}></p>
               </div>
         		</div>
         	</div>
@@ -27,9 +34,9 @@
     </div>
 
     <div class="info-links">
-        <a rel="nofollow" href="/"><img rel="nofollow" src="/Home/Tpl/default/Public/images/seal.png" alt="隐私认证"></a>
-        <a rel="nofollow" href="/"><img rel="nofollow" src="/Home/Tpl/default/Public/images/v-logo-2.png" alt="诚信网站"></a>
-        <a rel="nofollow" href="/"><img rel="nofollow" src="/Home/Tpl/default/Public/images/v-logo-1.png" alt="可信网站"></a>
+        <a rel="nofollow" ><img rel="nofollow" src="/Home/Tpl/default/Public/images/seal.png" alt="隐私认证"></a>
+        <a rel="nofollow" ><img rel="nofollow" src="/Home/Tpl/default/Public/images/v-logo-2.png" alt="诚信网站"></a>
+        <a rel="nofollow" ><img rel="nofollow" src="/Home/Tpl/default/Public/images/v-logo-1.png" alt="可信网站"></a>
     </div>
 
     <div class="slogan">

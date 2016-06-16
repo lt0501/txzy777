@@ -317,7 +317,7 @@ ul.clock li.clock_desc{
 .left-grid img{
 	margin-top: 10px;
 	margin-left: 10px;
-	width: 90% !important;
+	width: 95% !important;
 }
 ul.bag{
 	padding:0;
@@ -1148,13 +1148,13 @@ ul.footer_nav{
 }
 ul.footer_nav li{
 	display:inline-block;
-	border-right: 1px solid #000;
-	padding-left: 5px;
+	/*border-right: 1px solid #000;*/
+	/*padding-left: 4px;*/
 }
 ul.footer_nav li a{
 	color:#000;
 	font-size:0.8125em;
-	margin:0 10px 0 0;
+	margin: 0 10px 0 0;
 	font-weight:500;
 }
 ul.footer_nav li a:hover{
@@ -1964,12 +1964,17 @@ ul.list li a{
 	.copyright {
     margin: 0 auto;
     font: 12px/28px Arial, Verdana, Helvetica, sans-serif;
-    padding: 16px 0px;
+    padding: 5px 0px;
     /*margin-left: 610px;*/
     line-height: 24px;
-    text-align: center;
+    text-align: left;
     word-break: break-all;
 	}
+	ul.footer_nav li {
+    display: inline-block;
+    border-right: 1px solid #000;
+    padding-left: 0px;
+}
 }
 
 @media(max-width:1280px){
