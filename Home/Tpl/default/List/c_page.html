@@ -7,7 +7,8 @@
 <meta name="description" content="<{$list.description}>" />
 <include file='Public:file'/>
 <script language="javascript">var catid=<{$getid}>,pid=<{$list.pid}>,bid=<{$list.bid}>;</script>
-<load href="../Public/js/left_active.js"/>
+
+
 </head>
 <body>
 <include file='Public:c_head'/>
@@ -43,15 +44,38 @@
 <include file='Public:c_foot'/>
 
   <script type=text/javascript>
-     function g(x)
-    {
-     d=document.getElementsByTagName('a')
-      for(p=d.length;p--;){
-      if(d[p].id!=x){d[p].style.backgroundColor=''/*其他*/}
-      else{d[p].style.backgroundColor='blue'/*点击的*/}
-      }
+    //  function g(x)
+    // {
+    //  d=document.getElementsByTagName('a')
+    //   for(p=d.length;p--;){
+    //   if(d[p].id!=x){d[p].style.backgroundColor=''/*其他*/}
+    //   else{d[p].style.backgroundColor='blue'/*点击的*/}
+    //   }
+    // }
+
+    $(function(){  
+        $("#test span:last").css("display","none");
+        left_active();
+    })
+
+//     $(function(){
+//     $("#test li").click(function(){
+//         $(this).addClass("selected").siblings().removeClass("selected");
+//     });
+// });
+    function left_active(){      
+        if(document.getElementById("nav_active"+catid)!=null){
+            document.getElementById("nav_active"+catid).className="page_nav_active";
+        }
+        
     }
+  
   </script>
+  <style type="text/css">
+    .page_nav_active{
+      color:#006baf !important;
+    }
+  </style>
 
 </body>
 </html>

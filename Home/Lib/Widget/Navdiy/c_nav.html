@@ -1,7 +1,7 @@
-<div class="menubottom diy">
+<div class="menubottom">
   <div class="container diycontent">
     <div>
-       <ul class="megamenu skyblue">
+       <ul class="megamenu skyblue" id="test">
         <volist name='nav3' id='vo'>
           <li>
             <a onclick='g(this.id)' id="nav_active<{$vo.id}>" href="<{:W('Listhref',array('url'=>$vo['url'],'id'=>$vo['id'],'link'=>$vo['link'],'lang'=>'c'))}>"><{$vo.name}>

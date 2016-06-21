@@ -14,7 +14,7 @@ img{ border:none;}
 	border-color: #006baf !important;
 }
 /*main*/
-.lanrenzhijia{width:990px;margin:30px 0px;background:#fff;padding:15px;box-shadow:0 0 10px #ccc;}
+.lanrenzhijia{width:990px;margin:30px 0px;background:#fff;padding:15px;/*box-shadow:0 0 10px #ccc;*/}
 .lanrenzhijia .title{height:20px;border-bottom: 3px solid #e7e7e7;padding-bottom:30px;}
 .lanrenzhijia .title h2{ font-size: 20px;font-family: "microsoft yahei";}
 .lanrenzhijia .title-list{ position: relative; top: 6px;}
@@ -22,7 +22,7 @@ img{ border:none;}
 .lanrenzhijia .title-list li.on{ color: #3879D9; font-weight: bold;}
 .lanrenzhijia .title-list p{position:absolute;top:24px;left:0px;width:160px;height:7px;border-top: 3px solid #3879D9; overflow: hidden; text-align: center;}
 .lanrenzhijia .title-list b{display:inline-block;width:0;height:0;margin-top:-4px;border-style:solid dashed dashed dashed;border-width:9px;border-color: #3879D9 #fff #fff #fff;overflow: hidden;zoom: 1;font-size: 0;}
-.product{ height: 760px; position: relative; overflow: hidden; display: none; margin-top: 20px;}
+.product{ height: 900px; position: relative; overflow: hidden; display: none; margin-top: 20px;}
 .product ul{ position: absolute; left: 0px;}
 .product-wrap .show{ display: block;}
 .product-wrap .product li{ float: left; display: inline; margin-left: 13px;background: #f3f3f3;border: 2px solid #fafafa; transition:0.4s;-webkit-transition:0.4s;-moz-transition: 0.4s;-o-transition: 0.4s;-ms-transition: 0.4s;}

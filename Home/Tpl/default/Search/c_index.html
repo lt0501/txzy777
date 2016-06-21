@@ -34,6 +34,9 @@
             <li>
               <a href="<{:W('Href',array('url'=>$vo['url'],'id'=>$vo['id'],'type'=>'Product','lang'=>'c'))}>" target="_blank"><img name="picautozoom" class="img_border" src="__ROOT__/Uploads/<{$vo.thumb}>" width="176" height="176" alt="<{$vo.name|}>"/></a>
               <p><a href="<{:W('Href',array('url'=>$vo['url'],'id'=>$vo['id'],'type'=>'Product','lang'=>'c'))}>" title="<{$vo.name|}>" target="_blank"><{$vo.name|redWord=###,28,$keyword}></a></p>
+              <div class="go">
+                    <a href="<{:W('Href',array('url'=>$vo['url'],'id'=>$vo['id'],'type'=>'Product','lang'=>'c'))}>" target="_blank">更多&gt;&gt;</a>
+              </div>
             </li>
           </volist>
           </ul>  
