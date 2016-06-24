@@ -84,6 +84,12 @@
      return str.replace(/<[^>]+>/g,"");//去掉所有的html标记
     }
 
+    function left_active(){
+        if(document.getElementById("cat_active"+catid)!=null){
+        document.getElementById("cat_active"+catid).className="category_active";
+        }
+    }
+
     $(document).ready(function(){
        // $(".showall").click(function(){
             $(".showall").toggle(
@@ -102,6 +108,5 @@
                       )
             //  });
 </script>
-
 </body>
 </html>

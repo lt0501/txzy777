@@ -317,7 +317,7 @@ ul.clock li.clock_desc{
 .left-grid img{
 	/*margin-top: 10px;
 	margin-left: 10px;*/
-	width: 95% !important;
+	/*width: 95% !important;*/
 }
 ul.bag{
 	padding:0;
@@ -355,15 +355,12 @@ ul.bag li.bag_right p{
 	border-bottom:3px solid #006baf;
 }
 .menubottom ul li a{
-	margin-top: 15px;
+	margin-top: 18px;
 	color: #b0b0b0;
 }
 .menubottom ul li a:hover{
 	color: #000 !important;
 }
-/*.menubottom ul li a:visited{
-	color: #006baf !important;
-}*/
 .h_nav ul li a {
 	z-index: 99999999;
 	display: block;
@@ -1059,7 +1056,7 @@ i.paperclip{
 	margin-top:3em;
 }
 a.arrow{
-	padding: 5px 30px;
+	padding: 5px 4px;
 	text-align: center;
 }
 .content_bottom {
@@ -1154,7 +1151,7 @@ ul.footer_nav li{
 ul.footer_nav li a{
 	color:#000;
 	font-size:0.8125em;
-	margin: 0 5px 0 0;
+	margin: 0 3px 0 0;
 	font-weight:500;
 }
 ul.footer_nav li a:hover{
@@ -1972,7 +1969,7 @@ ul.list li a{
 	}
 	ul.footer_nav li {
     display: inline-block;
-    border-right: 1px solid #000;
+    /*border-right: 1px solid #000;*/
     padding-left: 0px;
 }
 }

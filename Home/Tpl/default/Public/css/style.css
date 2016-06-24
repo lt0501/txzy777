@@ -82,11 +82,16 @@ body,ul,li,ol{list-style:none;padding:0px;margin:0px;/*font-size:16px;*/}
 
 /*导航*/
 .menu_box ul li a{
-	margin-left: 20px;
 	font:16px "微软雅黑",Arial;
+}
+.youhua{
+	padding: 0 0px;
 }
 #nav_active5{
 	margin-left: 30px;
+}
+.change{
+	margin-left:30px !important;
 }
 
 /*公司简介*/
@@ -119,11 +124,11 @@ body,ul,li,ol{list-style:none;padding:0px;margin:0px;/*font-size:16px;*/}
 /*topnav竖线*/
 .imglist li:before{
 	position: absolute;
-	left: 170px;
+	left: 195px;
 	top: 18px;
 	z-index: 1;
 	width: 1px;
-	height: 100px;
+	height: 150px;
 	content: "";
 	background-color: #e0e0e0;
 }
@@ -133,15 +138,19 @@ body,ul,li,ol{list-style:none;padding:0px;margin:0px;/*font-size:16px;*/}
     display: table;
 }
 .sep{
-	position: absolute;
+	position: relative;
     top: 26px;
-    margin: 0 .85em;
+    padding: 0 35px;
 }
 .imglist li{
 	position: relative;
 }
 .skyblue a{
 	color: #006baf;
+}
+/*nav顶部选中颜色*/
+.category_active{
+      color:#006baf !important;
 }
 /*首页滚动产品*/
 .index_product{clear:both; margin:30px 32px 0px 20px;}
@@ -153,18 +162,18 @@ a.agrayleft{cursor:default;background-position:-34px 50%;}
 a.aright{float:right;background-position:-17px 50%;}
 a.agrayright{cursor:default;background-position:-51px 50%;}
 .scrolllist{height:175px;margin-left:0px;}
-.scrolllist .imglist_w{width:1130px;height:175px;overflow:hidden;float:left;position:relative;/*width=(li+padding)x可视个数*/}
+.scrolllist .imglist_w{width:1265px;height:220px;overflow:hidden;float:left;position:relative;/*width=(li+padding)x可视个数*/}
 .scrolllist .imglist_w ul{width:20000px;position:absolute;left:0px;top:0px;}
-.scrolllist .imglist_w li{width:135px;float:left; list-style:none;}
+.scrolllist .imglist_w li{width:130px;float:left; list-style:none;}
 /*.scrolllist .imglist_w li img{border:solid 1px #ddd;}*/
 .scrolllist .imglist_w li a:hover img{filter:alpha(opacity=86);-moz-opacity:0.86;opacity:0.86;}
 .scrolllist .imglist_w li p{overflow:hidden;float:left;}
-.scrolllist .imglist_w li p a{display: inline-block; width:124px; margin-top: 15px; line-height: 18px; color: #6f6f6f; text-align: center;}
+.scrolllist .imglist_w li p a{display: inline-block; width:124px; margin-top: 15px; line-height: 18px; color: #6f6f6f; margin-left:50px;/*text-align: center;*/}
 .scrolllist .imglist_w li p a:hover{color: #dc1929;}
 
 /*导航下拉框*/
 .imglist_w ul li{
-	margin-left: 50px;
+	margin-left: 73px;
 }
 
 #left {float:left; width:196px; padding: 81px 0px 0px 14px; position:relative; top:-60px; z-index: 99; _padding-left: 16px;}
@@ -237,10 +246,10 @@ ul.news_list li a:hover{color:#dc1929; text-decoration:none;}
 }
 .newleft{
 	/*width: 550px;*/
-    height: 170px;
+    height: 190px;
 	border: 2px solid #e7e7e7;
 	cursor:pointer;
-	box-shadow: 0 0 30px rgba(0,0,0,0.1);
+	box-shadow: 0 0 10px rgba(0,0,0,0.1);
     padding-left: 30px;
     margin-left: 0px;
 	-webkit-transition:box-shadow 1s;
@@ -249,7 +258,7 @@ ul.news_list li a:hover{color:#dc1929; text-decoration:none;}
 	-moz-transition:box-shadow 1s;
 }
 .newleft:hover{
-	box-shadow: 0 30px 30px rgba(0,0,0,0.2);
+	box-shadow: 0 10px 10px rgba(0,0,0,0.2);
 }
 .sixnews{
 	margin-top: 5px;
@@ -318,7 +327,7 @@ dl.table dd{float:left; width:600px; height:40px; line-height:20px;}
 dl.table dd.biezhu{height:130px;}
 dl.table dd.biezhu textarea{height:115px;width:330px;}
 .codeimg{background-color: #000; margin: 0px 0px 2px 5px;}
-input.submit_btn{color:#2D629A;background:#FFFFFF url(../images/btn_bg.gif) repeat-x;border:1px solid #AABAC3;padding-top:3px;padding-bottom:2px;font-size:13px; font-weight:bold;width:70px;cursor:pointer!important;cursor:hand;overflow:hidden;height:25px; margin-right: 5px;}
+input.submit_btn{color:#fff;background:#FF6A00;border:1px solid #AABAC3;padding-top:3px;padding-bottom:2px;font-size:13px; font-weight:bold;width:70px;cursor:pointer!important;cursor:hand;overflow:hidden;height:25px; margin-right: 5px;}
 #myform dt{
 	float: left;
 }
@@ -363,7 +372,7 @@ li.small_li2_sitemap{float: left; padding-left: 20px;}
     width: 150px;
     height: 70px;
     margin-left: 40px;
-    margin-top: 14px;
+    margin-top: 10px;
 }
 .footerch{
 	float: left;
@@ -438,7 +447,6 @@ li.small_li2_sitemap{float: left; padding-left: 20px;}
     text-align: center;
     display: inline-block;
     height: 82px;
-    margin-left: 40px;
 }
 .diyflash{
 	width: 1188px;
@@ -494,4 +502,7 @@ li.small_li2_sitemap{float: left; padding-left: 20px;}
 }
 .diycontent p{
 	width: 900px;
+}
+#test{
+	font: 14px/1.5 "Helvetica Neue",Helvetica,Arial,"Microsoft Yahei","Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei",sans-serif;
 }

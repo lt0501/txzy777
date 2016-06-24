@@ -1,11 +1,12 @@
-function left_active(){      
+function left_active(){
+    // 一级分类
     if(document.getElementById("nav_active"+bid)!=null){
         document.getElementById("nav_active"+bid).className="nav_active";
     }
     // else{
     //     document.getElementById('home_nav').className="nav_active";
     // }
-
+    // 二级分类
     if(document.getElementById("cat_active"+catid)!=null){
         document.getElementById("cat_active"+catid).className="category_active";
     }else{
@@ -14,7 +15,7 @@ function left_active(){
             document.getElementById(tid).className="category_active";
         }
     }
-
+    // 三级分类
     if(document.getElementById("smallshow"+catid)!=null){
         document.getElementById("smallshow"+catid).style.display="block";
     }else{

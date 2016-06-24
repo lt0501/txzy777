@@ -44,20 +44,12 @@
 <include file='Public:c_foot'/>
 
   <script type=text/javascript>
-    //  function g(x)
-    // {
-    //  d=document.getElementsByTagName('a')
-    //   for(p=d.length;p--;){
-    //   if(d[p].id!=x){d[p].style.backgroundColor=''/*其他*/}
-    //   else{d[p].style.backgroundColor='blue'/*点击的*/}
-    //   }
-    // }
 
     $(function(){  
         $("#test span:last").css("display","none");
         left_active();
     })
-
+    
 //     $(function(){
 //     $("#test li").click(function(){
 //         $(this).addClass("selected").siblings().removeClass("selected");
@@ -67,7 +59,6 @@
         if(document.getElementById("nav_active"+catid)!=null){
             document.getElementById("nav_active"+catid).className="page_nav_active";
         }
-        
     }
   
   </script>
