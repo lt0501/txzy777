@@ -7,8 +7,12 @@
 <meta name="description" content="<{$article.edescription}>" />
 <include file='Public:file'/>
 <load href="__PUBLIC__/css/product.css"/>
+<load href="__PUBLIC__/css/jq22.css"/>
+<load href="__PUBLIC__/js/jq22.js"/>
 <load href="__PUBLIC__/js/product.js"/>
-<script language="javascript">var catid=<{$article.pid}>,pid=<{$articlelist.pid}>,bid=<{$articlelist.bid}>;</script>
+<script language="javascript">
+	var catid=<{$article.pid}>,pid=<{$articlelist.pid}>,bid=<{$articlelist.bid}>;
+</script>
 <load href="../Public/js/left_active.js"/>
 </head>
 <body>
@@ -20,7 +24,7 @@
 
     <div id="center">
 
-	<div id="left" class="eleftbg">
+	<div id="left" class="leftbg">
 	  <div class="category_title"></div>
 	  <{:W('Left',array('id'=>$article['bid'],'type'=>'product','lang'=>'e'))}>
 
@@ -29,7 +33,7 @@
 	<!-- end of left -->
 
             <div id="right">
-          	<div class="path_title"><span class="span_left"><{$articlelist.ename}></span><span class="span_right">Your position: <a href="<{:W('Index',array('cnen'=>'en','lang'=>'e'))}>">Home</a> &gt; <{$articlelist.ename}></span></div>
+          	<div class="path_title"><span class="span_left"><{$articlelist.ename}> <b><{$articlelist.ename|strtoupper}></b></span><span class="span_right">Your location:<a href="<{:W('Index',array('cnen'=>'en','lang'=>'e'))}>">Home</a> &gt; <{$articlelist.ename}></span></div>
 
                <div class="main_photo">
 
@@ -38,13 +42,13 @@
 			</div>
 			<div id="spec-n5">
 			<div class="control" id="spec-left">
-				<img src="__PUBLIC__/images/left.gif" alt="Left"/>
+				<img src="__PUBLIC__/images/left.gif"  alt="Left"/>
 			</div>
 			<div id="spec-list">
 				<ul "class=list-h">
-			              <volist name='photo' id='vo'>
-			                  <li><img src="__ROOT__/Uploads/<{$photo[$key]}>" alt="<{$article.ename}>"></li>
-			              </volist>
+	              <volist name='photo' id='vo'>
+	                  <li><img src="__ROOT__/Uploads/<{$photo[$key]}>" alt="<{$article.ename}>"></li>
+	              </volist>
 				</ul>
 			</div>
 			<div class="control" id="spec-right">
@@ -59,45 +63,89 @@
 	        <div class="product_group">
 	            <h1><{$article.ename}></h1>
 	            <ul>
-	                <li><{$article.eproperty1}></li>
+	                <!-- <li><{$article.property1}></li> -->
 	                <li><{$article.eproperty2}></li>
 	                <li><{$article.eproperty3}></li>
-	                <li><{$article.eproperty4}></li>
-	                <li>Product description: <{$article.edescription|mb_substr=###,0,200,'utf-8'}></li>
+	                <!-- <li><{$article.property4}></li> -->
+	                <li>product description:<{$article.edescription|mb_substr=###,0,300,'utf-8'}></li>
 	                <li>
 	                	<form id="orderform" method="post" action="<{:W('Listhref',array('link'=>'/Inquiry/','lang'=>'e'))}>">
-	                	<input type="hidden" name="ordername" value="<{$article.ename}>" />
-	                	<a href="javascript:orderform.submit();"><img src="../Public/images/eorder.gif" alt="Inquiry"/></a>
+	                	<input type="hidden" name="ordername" value="<{$article.name}>" />
+	                	<a href="javascript:orderform.submit();"><img src="__PUBLIC__/images/email.png" height="40" width="160" alt="在线订购" /></a>
+	                	<a href="http://wpa.qq.com/msgrd?v=3&uin=<{$online_qq.$key}>&site=qq&menu=yes"><img src="__PUBLIC__/images/qq.png" height="40" width="160" alt="QQ" /></a>
+	                	<!-- <a href="#"><img src="__PUBLIC__/images/weixin.jpg" height="30" width="30" alt="微信" /></a> -->
+	                	<a target="_blank" href="http://amos.im.alisoft.com/msg.aw?v=2&uid=<{$online_taobao.$key}>&site=cntaobao&s=1&charset=utf-8"><img src="__PUBLIC__/images/wenxin.png" height="40" width="160" alt="点击联系我"/></a>
 	                	</form>
 	                </li>
 	            </ul>
 	        </div>
 	        <div class="clear"></div>
+			<!-- 产品细节tab -->
+			<div class="lanrenzhijia">
+				<div class="title cf">
+				    <ul class="title-list fr cf ">
+				      <li class="on">product description</li>
+				      <li>Specifications</li>
+				      <li>Product advantages</li>
+				      <li>typical application</li>
+				      <li>Ordering Information</li>
+				      <li>FAQ</li>
+				      <p><b></b></p>
+				    </ul>
+				</div>
+				<div class="product-wrap">
+			    <!--产品介绍-->
+				    <div class="product show">
+				      <ul class="cf">
+				      <!-- 模板 -->
+				        <li class="ml0">
+				          <p class="mt10"><{$article.eontents}></p>
+				        </li>
+				      </ul>
+				    </div>
+				    <!--规格参数-->
+				    <div class="product">
+				      <ul class="cf">
+				        <li class="ml0">
+				          <p class="mt10"><{$article.especification}></p>
+				        </li>
+				      </ul>
+				    </div>
+				    <!--产品优势-->
+				    <div class="product">
+				      <ul class="cf">
+				        <li class="ml0">
+				          <p class="mt10"><{$article.eproductadvantages}></p>
+				        </li>
+				      </ul>
+				    </div>
+				    <!--典型应用-->
+				    <div class="product">
+				      <ul class="cf">
+				        <li class="ml0">
+				          <p class="mt10"><{$article.etypicalapplication}></p>
+				        </li>
+				      </ul>
+				    </div>
+				    <!--订购信息-->
+				    <div class="product">
+				      <ul class="cf">
+				        <li class="ml0">
+				          <p class="mt10"><{$article.eproductorder}></p>
+				        </li>
+				      </ul>
+				    </div>
+				    <!-- 产品提问 -->
+				    <div class="product">
+				      <ul class="cf">
+				        <li class="ml0">
+				          <p class="mt10"><{$article.eproductquestion}></p>
+				        </li>
+				      </ul>
+				    </div>
+				</div>
+			</div>
 
-            <div class="product_content">
-                <h3 class="introduce eintroduce">Product introduction</h3>
-                <{$article.econtents}>
-            </div>
-            <div class="product_content">
-                <h3 class="introduce eintroduce">Specification</h3>
-                <{$article.specification}>
-            </div>
-            <div class="product_content">
-                <h3 class="introduce eintroduce">Product Advantages</h3>
-                <{$article.eproductadvantages}>
-            </div>
-            <div class="product_content">
-                <h3 class="introduce eintroduce">Typical Application</h3>
-                <{$article.etypicalapplication}>
-            </div>
-            <div class="product_content">
-                <h3 class="introduce eintroduce">Product Order</h3>
-                <{$article.eproductorder}>
-            </div>
-            <div class="product_content">
-                <h3 class="introduce eintroduce">Product Question</h3>
-                <{$article.eproductquestion}>
-            </div>
 
 	        <div class="point">
 	              <span class="to_prev"><{$prevnext.prev}></span>
@@ -105,12 +153,16 @@
 	        </div>
 
             <div class="related_product">
-                <h3 class="erelated_title">Related products</h3>
+                <h3 class="related_title">Related Products</h3>
                 <ul class="products_list products_related_list">
                 <volist name="related" id="vo" offset="0" length="4">
                   <li>
-                    <a href="<{:W('Href',array('url'=>$vo['url'],'id'=>$vo['id'],'type'=>'Product','lang'=>'e'))}>" target="_blank"><img name="picautozoom" class="img_border" src="__ROOT__/Uploads/<{$vo.thumb}>" width="176" height="176" alt="<{$vo.ename}>"/></a>
-                    <p><a href="<{:W('Href',array('url'=>$vo['url'],'id'=>$vo['id'],'type'=>'Product','lang'=>'e'))}>" title="<{$vo.ename}>" target="_blank"><{$vo.ename|mb_substr=###,0,50,'utf-8'}></a></p>
+                    <a href="<{:W('Href',array('url'=>$vo['url'],'id'=>$vo['id'],'type'=>'Product','lang'=>'e'))}>" target="_blank"><img name="picautozoom" class="img_border" src="__ROOT__/Uploads/<{$vo.thumb}>" width="176" height="176" alt="<{$vo.name}>"/></a>
+                    <h1><a href="<{:W('Href',array('url'=>$vo['url'],'id'=>$vo['id'],'type'=>$table,'lang'=>'e'))}>" title="<{$vo.name|}>" target="_blank"><{$vo.ename|mb_substr=###,0,28,'utf-8'}></a></h1>
+              		<p><{$vo.edescription|mb_substr=###,0,200,'utf-8'}></p>
+              		<div class="go">
+	                	<a href="<{:W('Href',array('url'=>$vo['url'],'id'=>$vo['id'],'type'=>'Product','lang'=>'e'))}>" target="_blank">more&gt;&gt;</a>
+	              	</div>
                   </li>
                 </volist>
                 </ul>

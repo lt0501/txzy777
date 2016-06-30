@@ -239,9 +239,9 @@ a:active {color: #006baf}*/
 	background:#ee4a02;
 	color: #fff;
 }
-.header_bottom{
+/*.header_bottom{
 	padding:0em 0 1em;
-}
+}*/
 .header_bottom-box, .header_top-box, .sellers_grid{
 	padding:0 15px;
 }

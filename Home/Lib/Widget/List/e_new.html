@@ -1,7 +1,7 @@
 <if condition="$new">
   <ul>
     <volist name="new" id="vo" offset="0" length="5">
-	<li><div class='time'><{$vo.time|date='Y-m-d',###}></div><a href="<{:W('Href',array('url'=>$vo['url'],'id'=>$vo['id'],'type'=>'new','lang'=>'e'))}>" title="<{$vo.etitle}>"><{$vo.etitle|mb_substr=###,0,32,'utf-8'}></a></li>
+	<li><div class='time'><{$vo.time|date='Y-m-d',###}></div><a href="<{:W('Href',array('url'=>$vo['url'],'id'=>$vo['id'],'type'=>'new','lang'=>'e'))}>" title="<{$vo.etitle}>"><{$vo.etitle|mb_substr=###,0,100,'utf-8'}></a></li>
     </volist>
   </ul>
 </if>

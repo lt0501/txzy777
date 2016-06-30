@@ -1,27 +1,47 @@
 <div id="footer">
+    <div class="container">
 <!-- <if condition="isset($isindex)">
     <div class="links">
 		Links: <{:W('Link',array('lang'=>'e'))}>
     </div>
 </if> -->
+    
+     <div class="skyblueimg">
+      <a href="/index.html"><img src="__ROOT__/Uploads/<{$Think.config.web_logo}>" alt="<{$Think.config.web_name}>"></a>
+    </div>
+    
+    <div class="footerch">
+    	<div class="header_bottom">
+           <div class="header_bottom-box">
+        		<div class="header_bottom_left">
+        			<div class="logobottom">
+        				<!-- <{:W('Navbottom',array('lang'=>'e'))}> -->
+                        <ul class="footer_nav">
+                          <li>
+                            <a href="/en/-service-support.html">service support</a><span>|</span>
+                            <a href="/en/-Company-Profile.html">about us</a><span>|</span>
+                            <a href="/en/joinus.html">join us</a>
+                          </li>
+                        </ul>
+        			</div>
+                    <div class="copyright <if condition='isset($isindex)'>copyright_index</if>">
+                        <p><{$Think.config.web_copyright}>&nbsp;&nbsp;Add: <{$Think.config.web_eadd}> &nbsp;<br/>Tel: <{$Think.config.web_tel}> &nbsp;Fax: <{$Think.config.web_fax}>&nbsp;&nbsp;<{$Think.config.web_count}><{$Think.config.web_icp}></p>
+                    </div>
+        		</div>
+        	</div>
+        </div>
+        <if condition='isset($isindex)'><{:W('Tags',array('lang'=>'e'))}></if>
+    </div>
 
-	<div class="header_bottom">
-    <div class="container">
-    	<div class="header_bottom-box">
-    		<div class="header_bottom_left">
-    			<div class="logobottom">
-    				<{:W('Navbottom',array('lang'=>'e'))}>
-    			</div>
-    		</div>
-    	</div>
+    <div class="info-links">
+        <a rel="nofollow" ><img rel="nofollow" src="/Home/Tpl/default/Public/images/seal.png" alt="隐私认证"></a>
+        <a rel="nofollow" ><img rel="nofollow" src="/Home/Tpl/default/Public/images/v-logo-2.png" alt="诚信网站"></a>
+        <a rel="nofollow" ><img rel="nofollow" src="/Home/Tpl/default/Public/images/v-logo-1.png" alt="可信网站"></a>
+    </div>
+    <div class="slogan">
+      SkyMEMS,measurement is designed for MEMS born!
     </div>
   </div>
-
-    <div class="copyright <if condition='isset($isindex)'>copyright_index</if>">
-        <p><{$Think.config.web_icp}> <a href="__ROOT__/e_sitemap.html" target="_blank">Sitemap</a><{$Think.config.web_copyright}></p>
-        <p>Add: <{$Think.config.web_eadd}> &nbsp;Tel: <{$Think.config.web_tel}> &nbsp;Fax: <{$Think.config.web_fax}>&nbsp;<{$Think.config.web_count}></p>
-    </div>
-	<if condition='isset($isindex)'><{:W('Tags',array('lang'=>'e'))}></if>
 </div>
 <!-- end of footer -->
 <include file='Public:translate'/>

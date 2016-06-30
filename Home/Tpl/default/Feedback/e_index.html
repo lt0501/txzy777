@@ -11,19 +11,19 @@
 <SCRIPT language=javaScript>
 function CheckJob()
 {
-  if (document.myform.title.value.length==""){
-    alert ("Please enter the title!");
-    document.myform.title.focus();
-    return false;
-  }
   if (document.myform.name.value.length==""){
-    alert ("Please enter your name!");
+    alert ("Please enter the name!");
     document.myform.name.focus();
     return false;
   }
   if (document.myform.tel.value.length==""){
-    alert ("Please enter the phone!");
+    alert ("Please enter your telephone!");
     document.myform.tel.focus();
+    return false;
+  }
+  if (document.myform.email.value.length==""){
+    alert ("Please enter the email!");
+    document.myform.email.focus();
     return false;
   }
  }
@@ -38,39 +38,100 @@ function CheckJob()
 
     <div id="center">
 
-      <div id="left" class="eleftbg">
+      <div id="left" class="leftbg">
           <div class="category_title"></div>
           <ul class="category" id="left_cat">
-             <li><a id="cat_active" href="__SELF__">Feedback</a></li>
+             <li><a id="cat_active" href="__SELF__">SkyMEMS customer needs Selection Tables</a></li>
           </ul> 
           <include file='Public:e_contact'/>
       </div>
       <!-- end of left -->
         
         <div id="right">
-          <div class="path_title"><span class="span_left">Feedback </span><span class="span_right">Your position: <a href="<{:W('Index',array('cnen'=>'en','lang'=>'e'))}>">Home</a> &gt; Feedback</span></div>
+          <div class="path_title"><span class="span_left">SkyMEMS customer needs Selection Tables <b>Feedback</b></span><span class="span_right">Your location:<a href="<{:W('Index',array('cnen'=>'cn','lang'=>'c'))}>">Home</a> &gt; Selection Tables</span></div>
           
-          <form id="myform" name="myform" method="post" action="__ROOT__/?m=Feedback&a=check&g=e" onSubmit="return CheckJob()">
-          <dl class="table">
-              <dt>Title: </dt>
-              <dd><input name="title" type="text" class="textwidth"/> <span style="color:#F00; font-size:15px;"> * </span></dd>
-              <dt>Your Name: </dt>
-              <dd><input name="name" type="text" class="textwidth"/> <span style="color:#F00; font-size:15px;"> * </span></dd>
-              <dt>Phone: </dt>
-              <dd><input name="tel" type="text" class="textwidth"/> <span style="color:#F00; font-size:15px;"> * </span></dd>
-              <dt>E-mail: </dt>
-              <dd><input name="email" type="text" class="textwidth"/></dd>
-              <dt>Add: </dt>
-              <dd><input name="add" type="text" class="textwidth"/></dd>
-              <dt>Message: </dt>
-              <dd class="biezhu"><textarea name="contents" class="areawidth"></textarea></dd>
-              <dt>Captcha: </dt>
-              <dd><input name="code" style="width:50px;"><img class="codeimg" src="<{:U('Common/verify')}>" onclick='this.src=this.src+"?"+Math.random()'/></dd>
+          <form id="myform" name="myform" method="post" action="__ROOT__/?m=Feedback&a=check&g=c" onSubmit="return CheckJob()">
+          <!-- tableA -->
+          <h2 style="background-color: #99CCFF;text-align: center;">SkyMEMS customer needs Selection Tables</h2>
+          <dl class="tableA">
+              <dt>Custom needs a brief description:</dt>
+              <dd>
+                <textarea name="explanation" rows="5" cols="120" value="">(Customized products will be applied on the equipment? We need to solve the problem?)</textarea>
+              </dd>
+          </dl>
+          <!-- tableB -->
+          <h3 style="background-color: #99CCFF;text-align: left;">skills requirement:</h3>
+          <dl class="tableB" style="float:left; width: 400px;">
+              <dt>Accuracy:</dt>
+              <dd><input name="accuracy" type="text" value="" class="textwidth"/></dd>
+              <dt>Resolution:</dt>
+              <dd><input name="resolution" type="text" value="" class="textwidth"/></dd>
+              <dt>Frequency response:</dt>
+              <dd><input name="frequency" type="text" value="" class="textwidth"/></dd>
+              <dt>Measuring range:</dt>
+              <dd><input name="measuring" type="text" value="" class="textwidth"/></dd>
+              <dt>Output Interface:</dt>
+              <dd><input name="export" type="text" value="" class="textwidth"/></dd>
+              <dt>Delayed start:</dt>
+              <dd><input name="delay" type="text" value="" class="textwidth"/></dd>
+            </dl>
+            <dl class="tableB">
+              <dt>Product Agreement:</dt>
+              <dd><input name="product" type="text" value="" class="textwidth"/></dd>
+              <dt>Protection class:</dt>
+              <dd><input name="protect" type="text" value="" class="textwidth"/></dd>
+              <dt>Electromagnetic Compatibility:</dt>
+              <dd><input name="electromagnetic" type="text" value="" class="textwidth"/></dd>
+              <dt>Operating temperature:</dt>
+              <dd><input name="temperature" type="text" value="" class="textwidth"/></dd>
+              <dt>storage temperature:</dt>
+              <dd><input name="earthquake" type="text" value="" class="textwidth"/></dd>
+              <dt>Vibration resistance:</dt>
+              <dd><input name="volume" type="text" value="" class="textwidth"/></dd>
+            </dl>
+          </dl>
+          <!-- tableC -->
+          <h3 style="background-color: #99CCFF;text-align:left;">Physical requirements:</h3>
+          <dl class="tableC">
+            <dt>Volume requirements:</dt>
+            <dd>length<input name="length" type="text" class="textwidth"/>mm
+            width<input name="width" type="text" class="textwidth"/>mm
+            height<input name="height" type="text" class="textwidth"/>mm</dd>
+            <dt>Weight requirements:</dt>
+            <dd><input name="weight" type="text" class="textwidth"/>g</dd>
+          </dl>
+          <!-- tableD -->
+          <h3 style="background-color: #99CCFF;text-align:left;">other requirements</h3>
+          <dl class="tableD">
               <dt></dt>
-              <dd><input type="submit" name="button" value="Send" class="submit_btn"/>
+              <dd>
+                <textarea name="others" rows="5" cols="120"></textarea>
+              </dd>NOTE: If you have other requirements, please indicate here!
+          </dl>
+          <!-- tableE -->
+          <h3 style="background-color: #99CCFF;text-align:left;">Contact information:</h3>
+          <dl class="tableE" style="float:left; width: 400px;">
+              <!-- <dt>留言标题：</dt>
+              <dd><input name="title" type="text" class="textwidth"/> <span style="color:#F00; font-size:15px;"> * </span></dd> -->
+              <dt>company name:</dt>
+              <dd><input name="company" type="text" class="textwidth"/></dd>
+              <dt>Contacts:</dt>
+              <dd><input name="name" type="text" class="textwidth"/> <span style="color:#F00; font-size:15px;"> * </span></dd>
+            </dl>
+            <dl class="tableE">
+              <dt>contact number:</dt>
+              <dd><input name="tel" type="text" class="textwidth"/> <span style="color:#F00; font-size:15px;"> * </span></dd>
+              <dt>E-mail:</dt>
+              <dd><input name="email" type="text" class="textwidth"/><span style="color:#F00; font-size:15px;"> * </span></dd>
+            </dl>
+              <dt>Security Code:</dt>
+              <dd style="margin-top: 35px;"><input name="code" style="width:50px;"><img class="codeimg" src="<{:U('Common/verify')}>" onclick='this.src=this.src+"?"+Math.random()'/></dd>
+              <dt></dt>
+          </dl>
+          <dd style="margin-top: 30px;margin-bottom: 20px;">
+          <input type="submit" name="button" value="Submit Message" class="submit_btn"/>
               <input name="reset" type="reset"  class="submit_btn" value="Reset" /></dd>
               <div class="clear"></div>
-          </dl>
           </form>
             
         </div>

@@ -34,7 +34,10 @@
           <volist name='article' id='vo'>   
             <li>
               <a href="<{:W('Href',array('url'=>$vo['url'],'id'=>$vo['id'],'type'=>$table,'lang'=>'e'))}>" target="_blank"><img name="picautozoom" class="img_border" src="__ROOT__/Uploads/<{$vo.thumb}>" width="176" height="176" alt="<{$vo.ename}>"/></a>
-              <p><a href="<{:W('Href',array('url'=>$vo['url'],'id'=>$vo['id'],'type'=>$table,'lang'=>'e'))}>" title="<{$vo.ename|}>" target="_blank"><{$vo.ename|mb_substr=###,0,50,'utf-8'}></a></p>
+              <p><a href="<{:W('Href',array('url'=>$vo['url'],'id'=>$vo['id'],'type'=>$table,'lang'=>'e'))}>" title="<{$vo.ename|}>" target="_blank"><{$vo.ename|mb_substr=###,0,300,'utf-8'}></a></p>
+              <div class="go">
+                <a href="<{:W('Href',array('url'=>$vo['url'],'id'=>$vo['id'],'type'=>$table,'lang'=>'c'))}>" title="<{$vo.name|}>" target="_blank">more&gt;&gt;</a>
+              </div>
             </li>
           </volist>
           </ul>  

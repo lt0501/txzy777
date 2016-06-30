@@ -12,6 +12,7 @@
 <body>
 <include file='Public:e_head'/>
 
+<div class="diybody">
   <div class="diymyposition">
     <div class="diyspan">
       Your Location：<a href="<{:W('Index',array('cnen'=>'cn','lang'=>'e'))}>">HOME</a> &gt; <{$list.ename}>
@@ -22,25 +23,47 @@
     <{:W('Navdiy',array('lang'=>'e'))}>
   </div>
 
-  <!-- <div class="diyflash">
-    <div class="diyimg" style="background:url('__ROOT__/Uploads/570df7b0eab5c.jpeg') no-repeat center top">
-    </div>
-  </div> -->
+  <div class="diyflash">
+    <!-- <div class="diyimg" style="background:url('__ROOT__/Uploads/570df7b0eab5c.jpeg') no-repeat center top">
+    </div> -->
+    <{:W('About',array('id'=> $list['id'] ))}>
+  </div>
 
   <div id="diymain">
       <div id="diycenter">
           <div id="diyright">
-            <h1 class="diytitle"><{$list.ename}></h1>
+            <!-- <h1 class="diytitle"><{$list.ename}></h1> -->
             <div class="diycontent">
               <{$list.econtents}>
-            </div>     
+            </div>
           </div>
         <div class="clear"></div>
     </div>
   </div>
+</div>
 
 
 <include file='Public:e_foot'/>
+
+  <script type=text/javascript>
+
+    $(function(){  
+        $("#test span:last").css("display","none");
+        left_active();
+    })
+    
+    function left_active(){      
+        if(document.getElementById("nav_active"+catid)!=null){
+            document.getElementById("nav_active"+catid).className="page_nav_active";
+        }
+    }
+  
+  </script>
+  <style type="text/css">
+    .page_nav_active{
+      color:#006baf !important;
+    }
+  </style>
 
 </body>
 </html>

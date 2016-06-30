@@ -11,9 +11,16 @@
 
 </head>
 <style type="text/css">
-.apple a{display:block; text-decoration:none;}
+.apple a{text-decoration:none;}
+.apple{
+  height: 150px;
+}
+.new{
+  width:70%;overflow:hidden; margin:0px auto;
+}
+.new a,.aa a{ width:100%; height:30px; line-height:30px; text-indent:20px; color:#000;}
 
-.apple,.aa{ width:70%; height:30px; overflow:hidden; margin:0px auto; }
+.apple,.aa{ width:70%;height:30px;overflow:hidden; margin:0px auto; }
 .apple a,.aa a{ width:100%; height:30px; line-height:30px; text-indent:20px; color:#000;}
 .aa {word-wrap:break-word;line-height:30px;  color:#000;}
 </style>
@@ -31,7 +38,8 @@
       <div class="col-md-12 newsgundong">
         <ul class="spinner">
           <strong class="news-center">NEWS</strong>
-          <div class="apple">
+          <div id="change" class="apple">
+          <span class="showall">show all</span>
             <{:W('List',array('table'=>'New','bid'=>2,'id'=>2,'lang'=>'e'))}> 
           </div>
         </ul>
@@ -61,19 +69,42 @@
         timeout: 300000
     });
     function autoScroll(obj){
-            $(obj).find("ul").animate({
-                marginTop : "-39px"
-            },500,function(){
-                $(this).css({marginTop : "0px"}).find("li:first").appendTo(this);
-            })
-        }
-        $(function(){
-            setInterval('autoScroll(".apple")',2000);
-
-        })
+      $(obj).find("ul").animate({
+        marginTop : "-39px"
+      },500,function(){
+        $(this).css({marginTop : "0px"}).find("li:first").appendTo(this);
+      })
+    }
+    $(function(){
+      setInterval('autoScroll(".apple")',2000);
+    })
     function delHtmlTag(str){
      return str.replace(/<[^>]+>/g,"");//去掉所有的html标记
     }
+
+    function left_active(){
+        if(document.getElementById("cat_active"+catid)!=null){
+        document.getElementById("cat_active"+catid).className="category_active";
+        }
+    }
+
+    $(document).ready(function(){
+       // $(".showall").click(function(){
+            $(".showall").toggle(
+                          function(){ 
+                            // console.log(1);
+                              $("#change").removeClass("apple").addClass('new');
+                              $(this).addClass('showup');
+                          },
+                          function(){
+                            // console.log(2);
+                                    $("#change").removeClass("new").addClass("apple");
+                                    $(this).removeClass('showup');
+                                    }
+                                );
+                          }
+                      )
+            //  });
 </script>
 </body>
 </html>
