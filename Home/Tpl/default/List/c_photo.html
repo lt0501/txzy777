@@ -29,15 +29,16 @@
         <div id="right">
           <div class="path_title"><span class="span_left"><{$list.name}> <b><{$list.ename|strtoupper}></b></span><span class="span_right">您现在的位置：<a href="<{:W('Index',array('cnen'=>'cn','lang'=>'c'))}>">网站首页</a> &gt; <{$list.name}></span></div>
           
-          <ul class="products_list">
-          <volist name='article' id='vo'>   
+          <ul style="text-align:center">
+          <volist name='article' id='vo'>
             <li>
-              <a href="<{:W('Href',array('url'=>$vo['url'],'id'=>$vo['id'],'type'=>$table,'lang'=>'c'))}>" target="_blank"><img name="picautozoom" class="img_border" src="__ROOT__/Uploads/<{$vo.thumb}>" width="176" height="176" alt="<{$vo.name|}>"/></a>
-              <p><a href="<{:W('Href',array('url'=>$vo['url'],'id'=>$vo['id'],'type'=>$table,'lang'=>'c'))}>" title="<{$vo.name|}>" target="_blank"><{$vo.name|mb_substr=###,0,28,'utf-8'}></a></p>
+              <!-- <a href="<{:W('Href',array('url'=>$vo['url'],'id'=>$vo['id'],'type'=>$table,'lang'=>'c'))}>" target="_blank"><img name="picautozoom" class="img_border" src="__ROOT__/Uploads/<{$vo.thumb}>" width="176" height="176" alt="<{$vo.name|}>"/></a> -->
+              <h3><!-- <a href="<{:W('Href',array('url'=>$vo['url'],'id'=>$vo['id'],'type'=>$table,'lang'=>'c'))}>" title="<{$vo.name|}>" target="_blank"> --><{$vo.name|mb_substr=###,0,28,'utf-8'}><!-- </a> --></h3>
+              <p><{$vo.contents}></p>
             </li>
           </volist>
           </ul>  
-          
+
           <div class="page">
             <{$page}>
           </div>

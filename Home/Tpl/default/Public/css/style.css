@@ -193,7 +193,7 @@ a.agrayright{cursor:default;background-position:-51px 50%;}
 .category li.small a:hover,.category li.small a.category_active{color:#ffffff;background-color: #9f9f9f; font-weight: bold;}
 
 /*左侧联系我们*/
-ul.contact {width:180px; height: 230px; padding:90px 10px 0px 10px; margin:0px 0px 0px 0px;background:url(../images/contact_bg.jpg)  top center no-repeat;}
+ul.contact {width:180px; height: 305px; padding:90px 10px 0px 10px; margin:0px 0px 0px 0px;background:url(../images/contact_bg.jpg)  top center no-repeat;}
 ul.econtact{background:url(../images/econtact_bg.jpg)  top center no-repeat;}
 ul.contact li{list-style:none; color:#666666; line-height:27px; font-size: 12px;}
 
