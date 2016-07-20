@@ -18,7 +18,7 @@ class DownloadAction extends CommonAction{
 		$this->show=$page->show();	
 		$this->down=$db->field('id,pid,name,ename,sort')->order('sort asc,id desc')->limit($page->firstRow.','.$page->listRows)->select();
 		$this->list=recursive(M('List')->field('id,pid,name,type')->where("type = 'download'")->order('sort')->select());
-		$this->display();	
+		$this->display();
 	}
 	
 	//添加页面
@@ -35,7 +35,25 @@ class DownloadAction extends CommonAction{
 		$_POST['url']=getSeoUrl('download',$_POST['url']);
 		if($data=$db->create()){
 			$info=$this->uploaddown();
-			$data['filename']=$info[0]['savename'];
+			// $data['filename']=$info[0]['savename'];
+			// $data['efilename']=$info[1]['savename'];
+
+			$data['filename'] = $_FILES['filename']['name'];
+         	$data['efilename'] = $_FILES['efilename']['name'];
+
+		     //如果用户只使用了第一个上传框
+		     if(!empty($data['filename']) && empty($data['efilename'])){
+		         $data['filename'] = $info[0]['savename'];
+		     //如果用户只使用了第二个上传框
+		     } elseif (empty($data['filename']) && !empty($data['efilename'])){
+		         $data['efilename'] = $info[0]['savename'];
+		     //如果用户两个都使用了        
+		     } elseif (!empty($data['filename']) && !empty($data['efilename'])){
+		         $data['filename']=$info[0]['savename'];
+				 $data['efilename']=$info[1]['savename'];
+		     }
+
+
 			$data['bid']=$this->getbigid($data['pid']);
 			if($db->data($data)->add()){
 				$this->success('添加下载成功',U('Download/index'));
@@ -63,13 +81,25 @@ class DownloadAction extends CommonAction{
 		if($data=$db->create()){
 			$data['bid']=$this->getbigid($data['pid']);
 			if($num){
+
 				$info=$this->uploaddown();
-				$data['filename']=$info[0]['savename'];
+				// $data['filename']=$info[0]['savename'];
+				// $data['efilename']=$info[1]['savename'];
+
+				foreach ($info as $v){
+		            if($v['key']=='filename'){
+		          		$data['filename']=$v['savename'];//filename框上传了文件,获取上传后的值
+		            }
+		            if($v['key']=='efilename'){
+		                $data['efilename']=$v['savename'];//efilename框上传了文件,获取上传后的值
+		            }
+	           }
+	           
 			}
 			if($db->data($data)->save()){
 				$this->success('修改成功',U('Download/index'));
 			}else{
-				$this->error('修改失败或没有数据被修改');	
+				$this->error('修改失败或没有数据被修改');
 			}
 		}else{
 			$this->error($db->getError());
@@ -114,7 +144,7 @@ class DownloadAction extends CommonAction{
 		}
 	}
 
-	//删除文件
+	//删除中文文件
 	public function delfile(){
 		$name=$this->_get('name');
 		$id=$this->_get('id','intval');
@@ -122,15 +152,34 @@ class DownloadAction extends CommonAction{
 		if($name && $id){
 			if(M('Download')->where('id='.$id)->setField('filename','')){
 				if(delimg('../Uploads/download/'.$name)){
-					$this->success('删除成功',U('mod',array('id'=>$id)));
+					$this->success('删除中文文件成功',U('mod',array('id'=>$id)));
 				}else{
-					$this->error('数据删除成功，但找不到要删除的文件',U('mod',array('id'=>$id)));
+					$this->error('中文文件数据删除成功，但找不到要删除的文件',U('mod',array('id'=>$id)));
 				}
 			}else{
-				$this->error('操作失败');
+				$this->error('中文文件操作失败');
 			}
 		}else{
-			$this->error('非法操作');
+			$this->error('中文文件非法操作');
+		}
+	}
+	//删除英文文件
+	public function edelfile(){
+		$name=$this->_get('name');
+		$id=$this->_get('id','intval');
+		
+		if($name && $id){
+			if(M('Download')->where('id='.$id)->setField('efilename','')){
+				if(delimg('../Uploads/download/'.$name)){
+					$this->success('删除英文文件成功',U('mod',array('id'=>$id)));
+				}else{
+					$this->error('英文文件数据删除成功，但找不到要删除的文件',U('mod',array('id'=>$id)));
+				}
+			}else{
+				$this->error('英文文件操作失败');
+			}
+		}else{
+			$this->error('英文文件非法操作');
 		}
 	}
 	

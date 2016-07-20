@@ -147,6 +147,20 @@
   </tr>
 
   <tr>
+    <td style="color:blue;">上传文件(英文)：</td>
+    <td height="35">
+    <empty name='down.efilename'>
+    <input type='file' name='efilename'>
+    <input type="hidden" name="num" value="1">
+    <else/>
+      <p style="padding:4px 0;">
+     <{$down.efilename}>&nbsp;&nbsp;<a href="<{:U('edelfile',array('name'=>$down['efilename'],'id'=>$down['id']))}>" class='del'>删除该文件</a>
+      </p>
+     </empty> 
+    </td>
+  </tr>
+
+  <tr>
     <td style="color:blue;">详细内容 (英文)：</td>
     <td>
     <textarea name="econtents" style="width:680px; height:320px; margin:8px 0;visibility:hidden;"><{$down.econtents}></textarea>

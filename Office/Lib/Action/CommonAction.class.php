@@ -58,6 +58,7 @@ class CommonAction extends Action{
 	protected function uploaddown(){
 		import('ORG.Net.UploadFile');
 		$upload=new UploadFile();
+		$upload->maxSize  = 553145728 ;
 		$upload->allowExts=array('rar','pdf','doc','xls','ppt','docx','xlsx','pptx','apk','gif','jpg','bmp','jpeg','png');
 		$upload->savePath='../Uploads/download/';
 		

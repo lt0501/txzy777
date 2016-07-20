@@ -22,7 +22,7 @@ class FeedbackAction extends CommonAction{
 			  $data['name'] = $this->_post('name','htmlspecialchars');
 			  $data['tel'] = $this->_post('tel','htmlspecialchars');
 			  $data['email'] = $this->_post('email','htmlspecialchars');
-			  $data['add'] = $this->_post('add','htmlspecialchars');
+			  // $data['add'] = $this->_post('add','htmlspecialchars');
 
 			  $sendcontents="<p>留言标题：".$data['title']."</p><p>联系人：".$data['name']."</p><p>联系电话：".$data['tel']."</p><p>邮箱：".$data['email']."</p><p>联系地址：".$data['add']."</p><p>留言内容：".$data['contents'];
 			  if($db->data($data)->add()){
@@ -63,7 +63,7 @@ class FeedbackAction extends CommonAction{
 				  }
 				  	  
 			   }else{
-				  $this->error('错误：留言失败!');  
+				  $this->error('错误：留言失败!');
 			   }	
 			}else{
 			  $this->error($db->getError());

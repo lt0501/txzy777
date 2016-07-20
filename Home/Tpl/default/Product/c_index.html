@@ -9,10 +9,14 @@
 <load href="__PUBLIC__/css/product.css"/>
 <load href="__PUBLIC__/css/jq22.css"/>
 <load href="__PUBLIC__/js/jq22.js"/>
+<load href="__PUBLIC__/js/jquery.alertWindow.min.js"/>
 
 <script language="javascript">
 	var catid=<{$article.pid}>,pid=<{$articlelist.pid}>,bid=<{$articlelist.bid}>;
 </script>
+<style type="text/css">
+.alertWindowContent{background:url(__PUBLIC__/images/erweima.png) no-repeat;}
+</style>
 <load href="../Public/js/left_active.js"/>
 </head>
 <body>
@@ -27,7 +31,7 @@
 	<div id="left" class="leftbg">
 	  <div class="category_title"></div>
 	  <{:W('Left',array('id'=>$article['bid'],'type'=>'product','lang'=>'c'))}>
-
+	  
 	  <include file='Public:c_contact'/>
 	</div>
 	<!-- end of left -->
@@ -71,10 +75,17 @@
 	                <li>
 	                	<form id="orderform" method="post" action="<{:W('Listhref',array('link'=>'/Inquiry/','lang'=>'c'))}>">
 	                	<input type="hidden" name="ordername" value="<{$article.name}>" />
-	                	<a href="javascript:orderform.submit();"><img src="__PUBLIC__/images/email.png" height="40" width="160" alt="在线订购" /></a>
-	                	<a href="http://wpa.qq.com/msgrd?v=3&uin=<{$online_qq.$key}>&site=qq&menu=yes"><img src="__PUBLIC__/images/qq.png" height="40" width="160" alt="QQ" /></a>
+	                	<a href="javascript:orderform.submit();"><!-- <img src="__PUBLIC__/images/email.png" height="40" width="160" alt="在线订购" /> -->
+
+	                	<img src="__PUBLIC__/images/email.png" onmouseover="this.src='__PUBLIC__/images/email2.png'" onmouseout="this.src='__PUBLIC__/images/email.png'" height="40" width="160"/>
+	                	</a>
+
+	                	<!-- <a href="http://wpa.qq.com/msgrd?v=3&uin=<{$online_qq.$key}>&site=qq&menu=yes"><img src="__PUBLIC__/images/qq.png" height="40" width="160" alt="QQ" /></a> -->
+
+	                	<a href="http://wpa.qq.com/msgrd?v=3&uin=99160991&site=qq&menu=yes" target="_blank"><img src="__PUBLIC__/images/qq.png" onmouseover="this.src='__PUBLIC__/images/qq2.png'" onmouseout="this.src='__PUBLIC__/images/qq.png'" height="40" width="160" alt="QQ" /></a>
+
 	                	<!-- <a href="#"><img src="__PUBLIC__/images/weixin.jpg" height="30" width="30" alt="微信" /></a> -->
-	                	<a target="_blank" href="http://amos.im.alisoft.com/msg.aw?v=2&uid=<{$online_taobao.$key}>&site=cntaobao&s=1&charset=utf-8"><img src="__PUBLIC__/images/wenxin.png" height="40" width="160" alt="点击联系我"/></a>
+	                	<a id="erwei" style="cursor:pointer;"><img src="__PUBLIC__/images/wenxin.png" onmouseover="this.src='__PUBLIC__/images/wenxin2.png'" onmouseout="this.src='__PUBLIC__/images/wenxin.png'" height="40" width="160"/></a>
 	                	</form>
 	                </li>
 	            </ul>
@@ -217,6 +228,12 @@
 			});
 		});
 	})
+
+	$(function(){
+        $("#erwei").click(function(){
+            jQuery.alertWindow("扫一扫关注","");
+        });
+    });
 </SCRIPT>
 <load href="__PUBLIC__/js/product_lib.js"/>
 <load href="__PUBLIC__/js/product_zoom.js"/>

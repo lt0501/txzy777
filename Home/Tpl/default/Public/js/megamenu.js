@@ -5,7 +5,7 @@ $.fn.megamenu = function(e) {
             o();
             s();
             if (n == 0) {
-                //$(".megamenu > li:not(.showhide)").hide(0)
+                $(".megamenu > li:not(.showhide)").hide(0)
             }
         } else {
             u();
@@ -38,9 +38,9 @@ $.fn.megamenu = function(e) {
         $(".megamenu > li.showhide").bind("click",
         function() {
             if ($(".megamenu > li").is(":hidden")) {
-                $(".megamenu > li").slideDown(300)
+                $(".megamenu > li").slideDown(0)
             } else {
-                $(".megamenu > li:not(.showhide)").slideUp(300);
+                $(".megamenu > li:not(.showhide)").slideUp(0);
                 $(".megamenu > li.showhide").show(0)
             }
         })

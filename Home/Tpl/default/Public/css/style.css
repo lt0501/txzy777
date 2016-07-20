@@ -143,9 +143,14 @@ body,ul,li,ol{list-style:none;padding:0px;margin:0px;/*font-size:16px;*/}
     padding: 0 35px;
     color: #e0e0e0;
 }
-/*.diytext{
-	padding: 70px 0 74px 186px;
-}*/
+.diytext p{
+	padding:0px 185px;
+}
+.diytext img{
+	padding:0px;
+	margin-left: -185px;
+}
+
 .imglist li{
 	position: relative;
 }
@@ -330,7 +335,7 @@ dl.table dd{float:left; width:600px; height:40px; line-height:20px;}
 dl.table dd.biezhu{height:130px;}
 dl.table dd.biezhu textarea{height:115px;width:330px;}
 .codeimg{background-color: #000; margin: 0px 0px 2px 5px;}
-input.submit_btn{color:#fff;background:#FF6A00;border:1px solid #AABAC3;padding-top:3px;padding-bottom:2px;font-size:13px; font-weight:bold;width:70px;cursor:pointer!important;cursor:hand;overflow:hidden;height:25px; margin-right: 5px;}
+input.submit_btn{color:#fff;background:#FF6A00;border:1px solid #FF6A00;padding-top:3px;padding-bottom:2px;font-size:13px; font-weight:bold;width:70px;cursor:pointer!important;cursor:hand;overflow:hidden;height:25px; margin-right: 5px;}
 #myform dt{
 	float: left;
 }
