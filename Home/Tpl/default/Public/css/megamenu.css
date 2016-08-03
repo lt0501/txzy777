@@ -1,5 +1,6 @@
 .megamenu{margin-bottom:0px;padding:0;width:100%;list-style:none;display:inline-block;position:relative;font-size:15px}
 .megamenu li{margin-bottom:-1px;display:inline;margin-left: 15px;margin-top: 5px;}
+.emegamenuli li{margin-left: 7px;}
 .megamenu>li>a{float:left;padding:8px 10px;text-decoration:none;text-transform:capitalize;font-size:14px;
 	-webkit-transition: all 0.3s ease-in-out;text-transform:uppercase;
 	-moz-transition: all 0.3s ease-in-out;

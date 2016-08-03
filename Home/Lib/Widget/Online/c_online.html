@@ -23,24 +23,38 @@
                                 </div>
                             </foreach>
                           </if>
+                          <if condition="$Think.config.qq_account neq ''">
+                            <foreach name="online_qq" item="vo">
+                                <div class="msggroup">
+                                    <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=<{$online_qq.$key}>&site=qq&menu=yes"><img class="qqimg" src="http://wpa.qq.com/pa?p=2:<{$online_qq.$key}>:52" alt="QQ在线客服"/><{$key}></a>
+                                </div>
+                            </foreach>
+                          </if>
+                          <if condition="$Think.config.qq_account neq ''">
+                            <foreach name="online_qq" item="vo">
+                                <div class="msggroup">
+                                    <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=<{$online_qq.$key}>&site=qq&menu=yes"><img class="qqimg" src="http://wpa.qq.com/pa?p=2:<{$online_qq.$key}>:52" alt="QQ在线客服"/><{$key}></a>
+                                </div>
+                            </foreach>
+                          </if>
                           <!--在线MSN-->  
-                          <if condition="$Think.config.msn_account neq ''">
+                          <!-- <if condition="$Think.config.msn_account neq ''">
                             <foreach name="online_msn" item="vo">
                               <div class="msggroup">
                                 <a href="msnim:chat?contact=<{$online_msn.$key}>" target="blank"><img class="qqimg" src="__PUBLIC__/images/msn.jpg" alt="MSN在线客服"/> <{$key}></a>
                                </div>
                             </foreach>
-                          </if>
+                          </if> -->
                           <!--在线SKYPE--> 
-                          <if condition="$Think.config.skype_account neq ''">
+                          <!-- <if condition="$Think.config.skype_account neq ''">
                             <foreach name="online_skype" item="vo">
                               <div class="msggroup">
                                 <a href="skype:<{$online_skype.$key}>?chat"><img  class="qqimg" src="__PUBLIC__/images/skype.gif" alt="SKYPE在线客服"> <{$key}></a>
                               </div>
                             </foreach>
-                          </if>
+                          </if> -->
                           <!--淘宝旺旺--> 
-                          <<!-- if condition="$Think.config.taobao_account neq ''">
+                          <!-- if condition="$Think.config.taobao_account neq ''">
                             <foreach name="online_taobao" item="vo">
                               <div class="msggroup">
                                 <a target="_blank" href="http://amos.im.alisoft.com/msg.aw?v=2&uid=<{$online_taobao.$key}>&site=cntaobao&s=1&charset=utf-8"><img SRC="http://amos.im.alisoft.com/online.aw?v=2&uid=<{$online_taobao.$key}>&site=cntaobao&s=1&charset=utf-8" alt="点击联系我"></a>

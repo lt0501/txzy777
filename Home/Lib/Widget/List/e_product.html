@@ -4,7 +4,7 @@
       	<volist name='product' id='vo' offset="0" length="$pronum">
        		<li>
        			<a target="_blank" href="<{:W('Href',array('url'=>$vo['url'],'id'=>$vo['id'],'type'=>'Product','lang'=>'e'))}>" title="<{$vo.ename}>"><img width="180" height="180" src="__ROOT__/Uploads/<{$vo.thumb}>" alt="<{$vo.ename}>"/></a>
-              <p><a href="<{:W('Href',array('url'=>$vo['url'],'id'=>$vo['id'],'type'=>'Product','lang'=>'e'))}>" title="<{$vo.ename}>" target="_blank"><{$vo.ename|mb_substr=###,0,30,'utf-8'}></a></p>
+              <p><a href="<{:W('Href',array('url'=>$vo['url'],'id'=>$vo['id'],'type'=>'Product','lang'=>'e'))}>" title="<{$vo.ename}>" target="_blank"><{$vo.ename|mb_substr=###,0,100,'utf-8'}></a></p>
        		</li>
 		</volist>
       </ul>

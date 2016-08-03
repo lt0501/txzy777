@@ -30,11 +30,12 @@
 
           <div class="path_title"><span class="span_left"><{$list.ename}></span><span class="span_right">Your position:  <a href="<{:W('Index',array('cnen'=>'en','lang'=>'e'))}>">Home</a> &gt; <{$list.ename}></span></div>
           
-          <ul class="products_list">
+          <ul style="text-align:left;">
           <volist name='article' id='vo'>   
             <li>
-              <a href="<{:W('Href',array('url'=>$vo['url'],'id'=>$vo['id'],'type'=>$table,'lang'=>'e'))}>" target="_blank"><img name="picautozoom" class="img_border" src="__ROOT__/Uploads/<{$vo.thumb}>" width="176" height="176" alt="<{$vo.ename}>"/></a>
-              <p><a href="<{:W('Href',array('url'=>$vo['url'],'id'=>$vo['id'],'type'=>$table,'lang'=>'e'))}>" title="<{$vo.ename|}>" target="_blank"><{$vo.ename|mb_substr=###,0,50,'utf-8'}></a></p>
+              <!-- <a href="<{:W('Href',array('url'=>$vo['url'],'id'=>$vo['id'],'type'=>$table,'lang'=>'e'))}>" target="_blank"><img name="picautozoom" class="img_border" src="__ROOT__/Uploads/<{$vo.thumb}>" width="176" height="176" alt="<{$vo.ename}>"/></a>
+              <p><a href="<{:W('Href',array('url'=>$vo['url'],'id'=>$vo['id'],'type'=>$table,'lang'=>'e'))}>" title="<{$vo.ename|}>" target="_blank"><{$vo.ename|mb_substr=###,0,50,'utf-8'}></a></p> -->
+              <p><{$vo.econtents}></p>
             </li>
           </volist>
           </ul>  

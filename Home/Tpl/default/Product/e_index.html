@@ -10,9 +10,13 @@
 <load href="__PUBLIC__/css/jq22.css"/>
 <load href="__PUBLIC__/js/jq22.js"/>
 <load href="__PUBLIC__/js/product.js"/>
+<load href="__PUBLIC__/js/jquery.alertWindow.min.js"/>
 <script language="javascript">
 	var catid=<{$article.pid}>,pid=<{$articlelist.pid}>,bid=<{$articlelist.bid}>;
 </script>
+<style type="text/css">
+//.alertWindowContent{background:url(__PUBLIC__/images/erweima.png) no-repeat;}
+</style>
 <load href="../Public/js/left_active.js"/>
 </head>
 <body>
@@ -67,14 +71,18 @@
 	                <li><{$article.eproperty2}></li>
 	                <li><{$article.eproperty3}></li>
 	                <!-- <li><{$article.property4}></li> -->
-	                <li>product description:<{$article.edescription|mb_substr=###,0,300,'utf-8'}></li>
+	                <li><{$article.edescription|mb_substr=###,0,300,'utf-8'}></li>
 	                <li>
 	                	<form id="orderform" method="post" action="<{:W('Listhref',array('link'=>'/Inquiry/','lang'=>'e'))}>">
 	                	<input type="hidden" name="ordername" value="<{$article.name}>" />
-	                	<a href="javascript:orderform.submit();"><img src="__PUBLIC__/images/email.png" height="40" width="160" alt="在线订购" /></a>
+	                	<!-- <a href="javascript:orderform.submit();"><img src="__PUBLIC__/images/email.png" height="40" width="160" alt="在线订购" /></a>
 	                	<a href="http://wpa.qq.com/msgrd?v=3&uin=<{$online_qq.$key}>&site=qq&menu=yes"><img src="__PUBLIC__/images/qq.png" height="40" width="160" alt="QQ" /></a>
-	                	<!-- <a href="#"><img src="__PUBLIC__/images/weixin.jpg" height="30" width="30" alt="微信" /></a> -->
-	                	<a target="_blank" href="http://amos.im.alisoft.com/msg.aw?v=2&uid=<{$online_taobao.$key}>&site=cntaobao&s=1&charset=utf-8"><img src="__PUBLIC__/images/wenxin.png" height="40" width="160" alt="点击联系我"/></a>
+	                	<a target="_blank" href="http://amos.im.alisoft.com/msg.aw?v=2&uid=<{$online_taobao.$key}>&site=cntaobao&s=1&charset=utf-8"><img src="__PUBLIC__/images/wenxin.png" height="40" width="160" alt="点击联系我"/></a> -->
+	                	<a href="javascript:orderform.submit();"><img src="__PUBLIC__/images/eemail.png" onmouseover="this.src='__PUBLIC__/images/eemail1.png'" onmouseout="this.src='__PUBLIC__/images/eemail.png'" height="40" width="160"/></a>
+
+	                	<a href="skype:skymems?chat" target="_blank"><img src="__PUBLIC__/images/skype.png" onmouseover="this.src='__PUBLIC__/images/skype1.png'" onmouseout="this.src='__PUBLIC__/images/skype.png'" height="40" width="160" alt="Skype online" /></a>
+
+	                	<a id="erwei" style="cursor:pointer;"><img src="__PUBLIC__/images/whatapp.png" onmouseover="this.src='__PUBLIC__/images/whatapp1.png'" onmouseout="this.src='__PUBLIC__/images/whatapp.png'" height="40" width="160"/></a>
 	                	</form>
 	                </li>
 	            </ul>
@@ -84,10 +92,10 @@
 			<div class="lanrenzhijia">
 				<div class="title cf">
 				    <ul class="title-list fr cf ">
-				      <li class="on">product description</li>
+				      <li class="on">Brief Introduction</li>
 				      <li>Specifications</li>
-				      <li>Product advantages</li>
-				      <li>typical application</li>
+				      <li>Product Advantages</li>
+				      <li>Typical Applications</li>
 				      <li>Ordering Information</li>
 				      <li>FAQ</li>
 				      <p><b></b></p>
@@ -99,7 +107,7 @@
 				      <ul class="cf">
 				      <!-- 模板 -->
 				        <li class="ml0">
-				          <p class="mt10"><{$article.eontents}></p>
+				          <p class="mt10"><{$article.econtents}></p>
 				        </li>
 				      </ul>
 				    </div>
@@ -148,7 +156,7 @@
 
 
 	        <div class="point">
-	              <span class="to_prev"><{$prevnext.prev}></span>
+	              <span class="to_prev"><{$prevnext.prev}></span><br/>
 	              <span class="to_next"><{$prevnext.next}></span>
 	        </div>
 
@@ -158,7 +166,7 @@
                 <volist name="related" id="vo" offset="0" length="4">
                   <li>
                     <a href="<{:W('Href',array('url'=>$vo['url'],'id'=>$vo['id'],'type'=>'Product','lang'=>'e'))}>" target="_blank"><img name="picautozoom" class="img_border" src="__ROOT__/Uploads/<{$vo.thumb}>" width="176" height="176" alt="<{$vo.name}>"/></a>
-                    <h1><a href="<{:W('Href',array('url'=>$vo['url'],'id'=>$vo['id'],'type'=>$table,'lang'=>'e'))}>" title="<{$vo.name|}>" target="_blank"><{$vo.ename|mb_substr=###,0,28,'utf-8'}></a></h1>
+                    <h1><a href="<{:W('Href',array('url'=>$vo['url'],'id'=>$vo['id'],'type'=>$table,'lang'=>'e'))}>" title="<{$vo.ename|}>" target="_blank"><{$vo.ename|mb_substr=###,0,80,'utf-8'}></a></h1>
               		<p><{$vo.edescription|mb_substr=###,0,200,'utf-8'}></p>
               		<div class="go">
 	                	<a href="<{:W('Href',array('url'=>$vo['url'],'id'=>$vo['id'],'type'=>'Product','lang'=>'e'))}>" target="_blank">more&gt;&gt;</a>
@@ -217,6 +225,11 @@
 			});
 		});
 	})
+	$(function(){
+        $("#erwei").click(function(){
+            jQuery.alertWindow("WhatsApp","+86 133 7203 8516");
+        });
+    });
 </SCRIPT>
 <load href="__PUBLIC__/js/product_lib.js"/>
 <load href="__PUBLIC__/js/product_zoom.js"/>

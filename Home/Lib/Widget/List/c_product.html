@@ -6,7 +6,7 @@
 		       	<a target="_blank" href="<{:W('Href',array('url'=>$vo['url'],'id'=>$vo['id'],'type'=>'Product','lang'=>'c'))}>" title="<{$vo.name|}>"><img width="180" height="180" src="__ROOT__/Uploads/<{$vo.thumb}>" alt="<{$vo.name}>"/>
 		       	</a>
 	        	<p>
-			        <a href="<{:W('Href',array('url'=>$vo['url'],'id'=>$vo['id'],'type'=>'Product','lang'=>'c'))}>" title="<{$vo.name}>" target="_blank"><{$vo.name|mb_substr=###,0,10,'utf-8'}>
+			        <a href="<{:W('Href',array('url'=>$vo['url'],'id'=>$vo['id'],'type'=>'Product','lang'=>'c'))}>" title="<{$vo.name}>" target="_blank" style="margin-top:25px;"><{$vo.name|mb_substr=###,0,10,'utf-8'}>
 			        </a>
 	        	</p>
 	       	</li>

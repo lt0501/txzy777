@@ -43,7 +43,7 @@
             <h3 class="erelated_title erelated_new_title">Related New</h3>
                 <ul class="news_list related_newlist">
                   <volist name='related' id='vo' offset="0" length="5">
-                  <li><div class="list_time"><{$vo.time|date='Y-m-d',###}></div><a href="<{:W('Href',array('url'=>$vo['url'],'id'=>$vo['id'],'type'=>'New','lang'=>'e'))}>" title="<{$vo.etitle}>" target="_blank"><{$vo.etitle|mb_substr=###,0,60,'utf-8'}></a></li>
+                  <li><div class="list_time"><{$vo.time|date='Y-m-d',###}></div><a href="<{:W('Href',array('url'=>$vo['url'],'id'=>$vo['id'],'type'=>'New','lang'=>'e'))}>" title="<{$vo.etitle}>" target="_blank"><{$vo.etitle|mb_substr=###,0,100,'utf-8'}></a></li>
                   </volist>        
                 </ul>
               <div class="clear"></div>

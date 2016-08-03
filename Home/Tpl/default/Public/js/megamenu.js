@@ -50,7 +50,7 @@ $.fn.megamenu = function(e) {
         $(".megamenu > li.showhide").hide(0)
     }
     var t = {
-        interval: 100
+        interval: 0//定义一个变量，它有个interval的元素
     };
     var n = 0;
     //$(".megamenu").prepend("<li class='showhide'><span class='title'>MENU</span><span class='icon1'></span><span class='icon2'></span></li>");
