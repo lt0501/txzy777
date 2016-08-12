@@ -74,7 +74,7 @@
 	                <li><{$article.edescription|mb_substr=###,0,300,'utf-8'}></li>
 	                <li>
 	                	<form id="orderform" method="post" action="<{:W('Listhref',array('link'=>'/Inquiry/','lang'=>'e'))}>">
-	                	<input type="hidden" name="ordername" value="<{$article.name}>" />
+	                	<input type="hidden" name="ordername" value="<{$article.ename}>" />
 	                	<!-- <a href="javascript:orderform.submit();"><img src="__PUBLIC__/images/email.png" height="40" width="160" alt="在线订购" /></a>
 	                	<a href="http://wpa.qq.com/msgrd?v=3&uin=<{$online_qq.$key}>&site=qq&menu=yes"><img src="__PUBLIC__/images/qq.png" height="40" width="160" alt="QQ" /></a>
 	                	<a target="_blank" href="http://amos.im.alisoft.com/msg.aw?v=2&uid=<{$online_taobao.$key}>&site=cntaobao&s=1&charset=utf-8"><img src="__PUBLIC__/images/wenxin.png" height="40" width="160" alt="点击联系我"/></a> -->
@@ -155,7 +155,7 @@
 			</div>
 
 
-	        <div class="point">
+	        <div class="point" >
 	              <span class="to_prev"><{$prevnext.prev}></span><br/>
 	              <span class="to_next"><{$prevnext.next}></span>
 	        </div>

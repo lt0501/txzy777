@@ -51,29 +51,57 @@ function CheckJob()
           <div class="path_title"><span class="span_left">Inquiry </span><span class="span_right">Your position: <a href="<{:W('Index',array('cnen'=>'en','lang'=>'e'))}>">Home</a> &gt; Inquiry</span></div>
           
         <form id="myform" name="myform" method="post" action="__ROOT__/?m=Inquiry&a=check&g=e" onSubmit="return CheckJob()">
-        <dl class="table">
-            <dt>Product name: </dt>
-            <dd><input name="product" type="text" value="<{$ordername}>" class="textwidth"/> <span style="color:#F00; font-size:15px;"> * </span></dd>
-            <dt>Order quantity: </dt>
-            <dd><input name="num" type="text" class="textwidth"/></dd>
-            <dt>Your Name: </dt>
+        <dl class="tableA" style="background-color:#F5F7FA">
+            <div style="float:left">
+            <dt style="width:500px;">Product Information</dt>
+            <dd style="width:500px;"><input name="product" type="text" value="<{$ordername}>" style="width:400px;" class="textwidth"/ disabled="disabled"> <span style="color:#F00; font-size:15px;"> * </span></dd>
+            </div>
+            <div style="float:left">
+            <dt style="width:100px;">Quantity</dt>
+            <dd style="width:100px;"><input name="num" type="text" style="width:50px;" class="textwidth"/></dd>
+            </div>
+            <div style="float:left">
+            <dt style="width:50px;">Unit</dt>
+            <dd style="width:50px;">PCS</dd>
+            </div>
+            <div class="clear"></div>
+        </dl>
+        <dl class="tableB" style="background-color:#F5F7FA">
+            <dt>Message:</dt>
+            <dd style="background-color:#FFF0E4;font-size:10px;">
+                Tips on getting accurate quotes from suppliers.Please include the following in your inquiry Order quantity.Special requests if any
+            </dd>
+            <dt></dt>
+            <dd class="biezhu">
+                <link href="__PUBLIC__/umeditor/themes/default/css/umeditor.css" type="text/css" rel="stylesheet">
+                <script type="text/plain" name="contents" id="myEditor" class="areawidth" style="width:100%;height:200px;">
+                <p>hello,could give me more details about this item?</p>
+                </script>
+            </dd>
+        </dl>
+        <h4>Contact Information:</h4>
+        <dl class="tableE" style="background-color:#F5F7FA;float:left;width: 400px;">
+            <dt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Your Name: </dt>
             <dd><input name="name" type="text" class="textwidth"/> <span style="color:#F00; font-size:15px;"> * </span></dd>
             <dt>Company name: </dt>
             <dd><input name="company" type="text" class="textwidth"/></dd>
-            <dt>Address: </dt>
+        </dl>
+        <dl class="tableE">
+            <dt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Your Email:</dt>
+            <dd><input name="email" type="text" class="textwidth"/><span style="color:#F00; font-size:15px;"> * </span></dd>
+            <dt>Phone Number: </dt>
+            <dd><input name="tel" type="text" class="textwidth"/></dd>
+
+            <!-- <dt>Address: </dt>
             <dd><input name="add" type="text" class="textwidth"/></dd>
-            <dt>Phone: </dt>
-            <dd><input name="tel" type="text" class="textwidth"/> <span style="color:#F00; font-size:15px;"> * </span></dd>
             <dt>Fax: </dt>
-            <dd><input name="fax" type="text" class="textwidth"/></dd>
-            <dt>E-mail: </dt>
-            <dd><input name="email" type="text" class="textwidth"/></dd>      
-            <dt>Message: </dt>
-            <dd class="biezhu"><textarea name="contents" class="areawidth"></textarea></dd>
-            <dt>Captcha: </dt>
+            <dd><input name="fax" type="text" class="textwidth"/></dd> -->
+        </dl>
+        <dl class="tableE" style="background-color:#F5F7FA">
+            <dt>Verification Code: </dt>
             <dd><input name="code" style="width:50px;"><img class="codeimg" src="<{:U('Common/verify')}>" onclick='this.src=this.src+"?"+Math.random()'/></dd>
             <dt></dt>
-            <dd><input type="submit" name="button" value="Send" class="submit_btn"/>
+            <dd><input type="submit" name="button" value="Send Inquiry Now" style="width:140px;" class="submit_btn"/>
             <input name="reset" type="reset"  class="submit_btn" value="Reset" /></dd>
             <div class="clear"></div>
         </dl>
@@ -90,6 +118,14 @@ function CheckJob()
 <!-- end of main -->
 
 <include file='Public:e_foot'/>
+<script type="text/javascript" charset="utf-8" src="__PUBLIC__/umeditor/umeditor.config.js"></script>
+<script type="text/javascript" charset="utf-8" src="__PUBLIC__/umeditor/umeditor.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/umeditor/lang/en/en.js"></script>
+<script>
+    $(function(){
+        var um = UM.getEditor('myEditor');
+    })
+</script>
 
 </body>
 </html>
